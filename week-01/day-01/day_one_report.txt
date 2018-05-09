@@ -1,0 +1,1 @@
+Day 01 - I deleted the .html and .css files I created during the day.
