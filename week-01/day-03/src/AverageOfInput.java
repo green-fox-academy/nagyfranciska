@@ -13,9 +13,9 @@ public class AverageOfInput {
         //    }    ... but how to make it save the inputs on different ints?...
         //              and count up the askForNumbers too?
 
-        Scanner askForNumber1 = new Scanner(System.in);
+        Scanner number = new Scanner(System.in);
         System.out.println("Please give me a number: ");
-        int userInput1 = askForNumber1.nextInt();
+        int userInput1 = number.nextInt();
 
         Scanner askForNumber2 = new Scanner(System.in);
         System.out.println("Please give me a number: ");
