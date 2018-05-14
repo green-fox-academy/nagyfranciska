@@ -5,6 +5,6 @@ public class PrintAll {
 
     int[] numbers = new int[] {4,5,6,7};
     System.out.println(Arrays.toString(numbers));
-    
+
   }
 }
