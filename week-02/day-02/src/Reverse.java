@@ -3,21 +3,14 @@ public class Reverse {
 
     String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
-    String backTo = new StringBuffer(reversed).reverse().toString();
-    System.out.println(backTo);
-
-
-    //or as it should have been:
-
-    reverse(reversed);
-
+    System.out.println(reverse(reversed));
   }
   public static String reverse (String textToBack){
-    char[] text = textToBack.toCharArray();
-    for(int i=text.length-1;i>=0;i--) {
-      System.out.print(text[i]);
+    String text = "";
+    for(int i=textToBack.length() -1;i>=0;i--) {
+      text = text + textToBack.charAt(i);
     }
-    return textToBack;
+    return text;
 
   }
 }
