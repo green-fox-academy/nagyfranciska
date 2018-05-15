@@ -7,6 +7,6 @@ public class TodoPrint {
 
     todoText = "My todo:\n" + todoText + " - Download games\n" + "    - Diablo";
     System.out.println(todoText);
-    
+
   }
 }
