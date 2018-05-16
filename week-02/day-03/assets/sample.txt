@@ -1,0 +1,5 @@
+Here is a text file to check if PrintEachLine.java can find it and 
+display the lines.
+
+It was fun, see you later!
+
