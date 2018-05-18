@@ -1,36 +1,39 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlay {
+public class Triangle {
   public static void mainDraw(Graphics graphics){
 
 
-    int step = WIDTH/18;   // change this for more/less density
 
-    int x1 = 5;
-    int y1 = HEIGHT/10;
-    int x2 = x1 + step;
-    int y2 = HEIGHT - x1;
+    int baseNumber = 15;
+    int center = WIDTH/2;
+    int size = 30;
 
-    for (int i = 1; i < (WIDTH - x1)/step; i++) {
-      graphics.setColor(Color.GREEN);
-      graphics.drawLine(x1, y1, x2, y2);
-      y1 += step;
-      x2 += step;
-    }
+    int x1 = center - size/2;
+    int x2 = center;
+    int x3 = center + size/2;
 
-    x1 = WIDTH/10;
-    y1 = 5;
-    x2 = WIDTH - y1;
-    y2 = y1 + step;
+    int y1 = size;
+    int y2 = 0;
+    int y3 = size;
 
-    for (int i = 1; i <(HEIGHT - y1)/step; i++) {
-      graphics.setColor(Color.MAGENTA);
-      graphics.drawLine(x1, y1, x2, y2);
-      x1 += step;
-      y2 += step;
+    for (int i = 0; i < 2; i++) {
+
+      int[] xPoints = {x1, x2, x3};
+      int[] yPoints = {y1, y2, y3};
+      graphics.drawPolygon(xPoints, yPoints, 3);
+
+      x1 = x1 - size/2;
+      x2 = x1 - size/2;
+      x3 = x1 - size/2;
+
+      y1 =  y1 + size;
+      y2 =  y1 + size;
+      y3 =  y1 + size;
 
     }
 
