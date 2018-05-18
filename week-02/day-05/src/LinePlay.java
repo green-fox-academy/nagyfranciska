@@ -7,14 +7,14 @@ public class LinePlay {
   public static void mainDraw(Graphics graphics){
 
 
-    int step = WIDTH/20;   // change this for more/less density
+    int step = WIDTH/18;   // change this for more/less density
 
     int x1 = 5;
     int y1 = HEIGHT/10;
     int x2 = x1 + step;
     int y2 = HEIGHT - x1;
 
-    for (int i = 1; i < (WIDTH - x1)/step ; i++) {
+    for (int i = 1; i < (WIDTH - x1)/step +1; i++) {
       graphics.setColor(Color.GREEN);
       graphics.drawLine(x1, y1, x2, y2);
       y1 += step;
