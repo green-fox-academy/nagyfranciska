@@ -9,8 +9,8 @@ public class SecondsIdADay {
     int currentSeconds = 42;
 
     int wholeDayInSeconds = 24 * 60 * 60;
-    int currentTime = currentHours * 60 * 60 + currentMinutes * 60 + currentSeconds;
-    System.out.println ("Remaining seconds : " + (wholeDayInSeconds - currentTime));
+    int currentTimeInSeconds = currentHours * 60 * 60 + currentMinutes * 60 + currentSeconds;
+    System.out.println ("Remaining seconds : " + (wholeDayInSeconds - currentTimeInSeconds));
 
   }
 }
