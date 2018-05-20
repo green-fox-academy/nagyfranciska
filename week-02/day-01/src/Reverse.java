@@ -3,34 +3,21 @@ import java.util.Arrays;
 public class Reverse {
   public static void main(String[] args) {
 
-    int[] aj = new int[] {3,4,5,6,7};
+    // - Create an array variable named `aj`
+    //   with the following content: `[3, 4, 5, 6, 7]`
+    // - Reverse the order of the elements in `aj`
+    // - Print the elements of the reversed `aj`
 
-    if (aj.length % 2 == 0) {
-      for (int i = 0; i < aj.length/2; i++) {
-        int temporal = aj[i];
-        aj[i] = aj[aj.length - i - 1];
-        aj[aj.length -i -1] = temporal;
-      }
-      System.out.println(Arrays.toString(aj));
-    }else {
-      for (int i = 0; i < (aj.length+1)/2; i++) {
-        int temporal = aj[i];
-        aj[i] = aj[aj.length - i - 1];
-        aj[aj.length -i -1] = temporal;
-      }
-      System.out.println(Arrays.toString(aj));
+    int[] aj = new int[] {3, 4, 5, 6, 7};
+    int[] temporal = new int[5];
+
+    for (int i = 0; i < aj.length; i++) {
+      temporal[i] = aj[aj.length - 1] - i;
     }
-      // if loop in case the number of array's items can change from odd or even
+    for (int i = 0; i < temporal.length; i++) {
+      aj[i] = temporal[temporal.length - 1] - i;
+    }
+    System.out.println(Arrays.toString(temporal));
 
   }
 }
-
-
-
-
- // for (int i = 0; i < aj.length; i++) {
- // int temporal = aj[i];
- // aj[i] = aj[aj.length - i - 1];
- // aj[aj.length -i -1] = temporal;
- // System.out.println(Arrays.toString(aj));
- // }
