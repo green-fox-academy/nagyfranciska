@@ -1,22 +1,20 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class OddEven {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    // Write a program that reads a number from the standard input,
+    // Then prints "Odd" if the number is odd, or "Even" if it is even.
 
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Please give me a number!");
-        int userNumber = userInput.nextInt();
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    int userInput = scanner.nextInt();
 
-        if (userNumber % 2 == 0) {
-            System.out.println("Even number.");
-        }   else {
-            System.out.println("Odd number.");
-        }
-
-
-
-
+    if (userInput % 2 == 0) {
+      System.out.println("Even number.");
+    } else {
+      System.out.println("Odd number.");
     }
+
+  }
 }
