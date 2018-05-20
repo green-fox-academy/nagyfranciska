@@ -1,22 +1,20 @@
 import java.util.Scanner;
 
 public class PrintBigger {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    // Write a program that asks for two numbers and prints the bigger one
 
-        Scanner scan1 = new Scanner(System.in);
-        System.out.println("Give me a number, please!");
-        int userNumber1 = scan1.nextInt();
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter two numbers: ");
+    int number1 = scan.nextInt();
+    int number2 = scan.nextInt();
 
-        Scanner scan2 = new Scanner(System.in);
-        System.out.println("Give me another, too!");
-        int userNumber2 = scan2.nextInt();
-
-        if (userNumber1 < userNumber2) {
-            System.out.println(userNumber2);
-        }   else {
-            System.out.println(userNumber1);
-        }
-
+    if (number1 < number2) {
+      System.out.println(number2);
+    } else {
+      System.out.println(number1);
     }
+
+  }
 }
