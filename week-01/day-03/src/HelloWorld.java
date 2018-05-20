@@ -1,10 +1,8 @@
 public class HelloWorld {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    String textToPrint = "Hello Seagal!";
+    System.out.println(textToPrint);
 
-        String textToPrint = "Hello Seagal!";
-
-        System.out.println(textToPrint);
-
-    }
+  }
 }
