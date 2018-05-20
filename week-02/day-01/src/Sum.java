@@ -1,19 +1,18 @@
-import java.util.Arrays;
-
 public class Sum {
   public static void main(String[] args) {
 
-    int[] listOfNum = new int[] {2,5,7};
-    System.out.println(sum(listOfNum));
+    // - Write a function called `sum` that sums all the numbers
+    //   until the given parameter and returns with an integer
+
+    int[] listOfNumbers = new int[] {2,5,7};
+    System.out.println(sum(listOfNumbers));
 
   }
-
   public static int sum(int[] numbers) {
-    int summa = 0;
+    int sum = 0;
     for (int i = 0; i < numbers.length; i++) {
-      summa += numbers[i];
+      sum += numbers[i];
     }
-    return summa;
+    return sum;
   }
-
 }
