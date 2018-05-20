@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,13 +12,13 @@ public class CountLines {
     // It should return zero if it can't open the file, and
     // should not raise any error.
 
-    String file = "SummerTime";
+    String file = "SummerTime.txt";
     int numberOfLines = lineCounter(file);
     System.out.println(numberOfLines);
 
   }
 
-  public static Integer lineCounter (String fileName) {
+  public static int lineCounter (String fileName) {
 
     Path path = Paths.get(fileName);
     List<String> lines = null;
