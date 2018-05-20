@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Candyshop {
   public static void main(String[] args) {
 
-    ArrayList<Object> arrayList = new ArrayList<Object>();
+    ArrayList<Object> arrayList = new ArrayList<>();
     arrayList.add("Cupcake");
     arrayList.add(2);
     arrayList.add("Brownie");
@@ -15,7 +15,15 @@ public class Candyshop {
     // No, don't just remove the lines
     // Create a method called sweets() which takes the list as a parameter.
 
-    System.out.println(sweets(arrayList));
-// Expected output: "Cupcake", "Croissant", "Brownie", "Ice crea
+    System.out.println(Sweets(arrayList));
+    // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
+
+  }
+  public static ArrayList Sweets(ArrayList list) {
+    list.set(1, "Croissant");
+    list.set(3, "Ice cream");
+    return list;
   }
 }
+
+
