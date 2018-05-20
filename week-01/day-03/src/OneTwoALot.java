@@ -1,28 +1,27 @@
 import java.util.Scanner;
 
 public class OneTwoALot {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    // Write a program that reads a number form the standard input,
+    // If the number is zero or smaller it should print: Not enough
+    // If the number is one it should print: One
+    // If the number is two it should print: Two
+    // If the number is more than two it should print: A lot
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please give me a number to work with!");
-        int userInput = scan.nextInt();
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    int userInput = scan.nextInt();
 
-        if (userInput <= 0) {
-            System.out.println("Not enough");
-        }   else if (userInput == 1) {
-            System.out.println("One");
-        }   else if (userInput == 2) {
-            System.out.println("Two");
-        }   else {
-            System.out.println("A lot");
-        }
-
-
-
-
-
-
-
+    if (userInput <= 0) {
+      System.out.println("Not enough.");
+    } else if (userInput == 1) {
+      System.out.println("One");
+    } else if (userInput == 2) {
+      System.out.println("Two");
+    } else {
+      System.out.println("A lot");
     }
+
+  }
 }
