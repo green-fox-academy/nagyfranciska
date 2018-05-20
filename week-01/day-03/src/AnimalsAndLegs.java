@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
 public class AnimalsAndLegs {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    // Write a program that asks for two integers
+    // The first represents the number of chickens the farmer has
+    // The second represents the number of pigs owned by the farmer
+    // It should print how many legs all the animals have
 
-        Scanner chicken = new Scanner(System.in);
-        System.out.println("How many chickens do the farmer have? Give me a number!");
-        int userChicken = chicken.nextInt();
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter the number of chickens: ");
+    int chicken = scanner.nextInt();
 
-        Scanner pig = new Scanner(System.in);
-        System.out.println("Great! And how many pigs does he have?");
-        int userPig = pig.nextInt();
+    System.out.println("Enter the number of pigs: ");
+    int pig = scanner.nextInt();
 
-        System.out.println("All those animals have " + (userChicken * 2 + userPig * 4) + " legs. Wow!");
+    System.out.println("Number of legs: " + chicken*2 + pig*4);
 
-
-
-    }
+  }
 }
