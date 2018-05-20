@@ -14,9 +14,9 @@ public class PrintParams {
     printParams("one ", "two ", "three ", "forth ");
   }
 
-  public static void printParams(String... strings) {
+  public static void printParams(String... count) {
     String string = "";
-    for (String str : strings) {
+    for (String str : count) {
       string += str;
     }
     System.out.println(string);
