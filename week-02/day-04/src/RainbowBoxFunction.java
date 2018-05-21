@@ -11,15 +11,15 @@ public class RainbowBoxFunction {
     // and draws a square of that size and color to the center of the canvas.
     // Create a loop that fills the canvas with rainbow colored squares.
 
-      int size = (int) (Math.random() * WIDTH);
+      int size = WIDTH;
 
-    for (int i = 0; i < 10; i++) {
-      int reduce = size -10;
+    for (int i = 0; i < 30; i++) {
       int r = (int) (Math.random() * 256);
       int g = (int) (Math.random() * 256);
       int b = (int) (Math.random() * 256);
       int[] color = {r, g, b};
-      BoxToCenter(reduce, color, graphics);
+      BoxToCenter(size, color, graphics);
+      size -= 15;
     }
   }
 
@@ -40,7 +40,7 @@ public class RainbowBoxFunction {
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setSize(new Dimension(WIDTH, HEIGHT + 23));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    jFrame.add(new CenterBoxFunction.ImagePanel());
+    jFrame.add(new RainbowBoxFunction.ImagePanel());
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
