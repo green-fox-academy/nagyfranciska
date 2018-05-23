@@ -1,11 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class LinePlay {
   public static void mainDraw(Graphics graphics){
-
 
     int step = WIDTH/18;   // change this for more/less density
 
@@ -33,7 +31,6 @@ public class LinePlay {
       y2 += step;
 
     }
-
   }
 
   // Don't touch the code below

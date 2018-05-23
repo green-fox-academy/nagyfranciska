@@ -1,41 +1,43 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangle {
   public static void mainDraw(Graphics graphics){
 
+    int pyramidSize = 4;
+    int xStep = 25;
+    int yStep = 50;
+    int x1 = 125;
+    int x2 = x1 + xStep;
+    int x3 = x2 + xStep;
+    int y1 = 100;
+    int y2 = 50;
+    int y3 = y1;
 
-
-    int baseNumber = 15;
-    int center = WIDTH/2;
-    int size = 30;
-
-    int x1 = center - size/2;
-    int x2 = center;
-    int x3 = center + size/2;
-
-    int y1 = size;
-    int y2 = 0;
-    int y3 = size;
-
-    for (int i = 0; i < 2; i++) {
-
-      int[] xPoints = {x1, x2, x3};
-      int[] yPoints = {y1, y2, y3};
-      graphics.drawPolygon(xPoints, yPoints, 3);
-
-      x1 = x1 - size/2;
-      x2 = x1 - size/2;
-      x3 = x1 - size/2;
-
-      y1 =  y1 + size;
-      y2 =  y1 + size;
-      y3 =  y1 + size;
-
+    for (int i = 1; i < pyramidSize + 1; i++) {
+      int[] xCoordinates = {x1, x2, x3};
+      int[] yCoordinates = {y1, y2, y3};
+      int points = 3;
+      graphics.drawPolygon(xCoordinates, yCoordinates, points);
+      for (int j = 0; j < i; j++) {
+        x1 -= yStep;
+        graphics.drawPolygon(xCoordinates, yCoordinates, points);
+      }
+      x1 = 125 + xStep * i;
+      x2 = x1 + xStep;
+      x3 = x2 + xStep;
+      y1 += yStep;
+      y2 += yStep;
+      y3 += yStep;
     }
+
+// draw hexagon:
+//    int[] xCoordinates = {10, 30, 50, 50, 30, 10};
+//    int[] yCoordinates = {20, 10, 20, 40, 50, 40};
+//    int points = 6;
+//    graphics.drawPolygon(xCoordinates, yCoordinates, points);
 
   }
 
