@@ -1,13 +1,4 @@
-class Tree {
-
-  String type;
-  String leafColor;
-  int age;
-  String sex;
-
-}
-
-public class TreeType  {
+public class MainForTree {
   public static void main(String[] args) {
 
     Tree tree1 = new Tree();
