@@ -29,7 +29,6 @@ public class RainbowBoxFunction {
       graphics.setColor(new Color(color[0], color[1], color[2]));
       graphics.fillRect(x, y, size, size);
 
-
   }
 
     // Don't touch the code below
