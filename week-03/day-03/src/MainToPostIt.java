@@ -1,4 +1,3 @@
-import javafx.geometry.Pos;
 
 public class MainToPostIt {
   public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class MainToPostIt {
 
     //or
 
-    PostIt post4 = new PostIt("red", "Cool", "white");
+    PostIt post4 = new PostIt("red", "Cool!", "white");
 
   }
 }
