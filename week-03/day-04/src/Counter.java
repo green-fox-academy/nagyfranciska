@@ -5,15 +5,15 @@ public class Counter {
   // one parameter: n and counts down from n.
 
   int number = 10;
-    System.out.println(recursive(number));
+    System.out.println(counter(number));
 
   }
 
-  private static int recursive(int n) {
+  private static int counter(int n) {
     if (n == 1) {
     return n;
     } else {
-      return recursive(n-1);
+      return counter(n-1);
     }
   }
 }
