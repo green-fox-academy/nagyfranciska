@@ -11,9 +11,9 @@ public class MainForDominoes {
     List<Dominoes> snake = new ArrayList<>();
     snake.add(dominoes.get(0));
 
-    for (int i = 0; i < dominoes.size() - 1; i++) {
-      for (int j = 0; j < dominoes.size(); j++) {
-        if (snake.get(i).getValues()[1] == (dominoes.get(j).getValues()[0])) {
+    for (int i = 0; i < dominoes.size(); i++) {
+      for (int j = 1; j < dominoes.size(); j++) {
+        if (snake.get(snake.size() - 1).getValues()[1] == (dominoes.get(j).getValues()[0])) {
           snake.add(dominoes.get(j));
         }
       }
