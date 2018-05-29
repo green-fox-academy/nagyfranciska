@@ -5,8 +5,7 @@ public class Sponsor extends Person {
   String company;
   int hiredStudents;
 
-  public Sponsor(String name, int age, String gender) {
-    super(name, age, gender);
+  public Sponsor() {
     company = "Google";
     hiredStudents = 0;
   }
@@ -33,6 +32,6 @@ public class Sponsor extends Person {
 
   @Override
   public void getGoal() {
-    System.out.println("Hire brilliant junior software developers.");
+    System.out.println("My goal is : hire brilliant junior software developers.");
   }
 }
