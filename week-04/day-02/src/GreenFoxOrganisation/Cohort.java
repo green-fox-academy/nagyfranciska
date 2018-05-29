@@ -1,26 +1,26 @@
 package GreenFoxOrganisation;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Cohort {
 
   String name;
-  List<Student> students;
-  List<Mentor> mentors;
+  ArrayList<Student> students;
+  ArrayList<Mentor> mentors;
 
   public Cohort(String name) {
     this.name = name;
-    List<Student> students = new ArrayList<>();
-    List<Mentor> mentors = new ArrayList<>();
+    students = new ArrayList<>();
+    mentors = new ArrayList<>();
   }
 
-  public void addStudent(Student student) {
+  public ArrayList addStudent(Student student) {
     students.add(student);
+    return students;
   }
 
-  public void addMentor(Mentor mentor) {
+  public ArrayList addMentor(Mentor mentor) {
     mentors.add(mentor);
+    return mentors;
   }
 
   public void info() {
