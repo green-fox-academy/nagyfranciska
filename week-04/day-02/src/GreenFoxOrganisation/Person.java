@@ -7,9 +7,9 @@ public class Person {
   String gender;
 
   public Person () {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
   }
 
   public Person (String name, int age, String gender) {
@@ -19,10 +19,11 @@ public class Person {
   }
 
   public void introduce() {
-    System.out.println("Hi I'm " + name + ", a " + age + "year old " + gender + ".");
+    System.out.println("Hi I'm " + name + ", a " + age + " year old " + gender + ".");
   }
 
   public void getGoal() {
     System.out.println("My goal is: live for the moment!");
   }
+
 }
