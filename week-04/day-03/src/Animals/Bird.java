@@ -1,6 +1,7 @@
 package animals;
+import flyable.Flyable;
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Flyable {
 
   public Bird() {
   }
@@ -10,5 +11,20 @@ public class Bird extends Animal {
 
   public String breed() {
     return super.breed();
+  }
+
+  @Override
+  public void land() {
+
+  }
+
+  @Override
+  public void fly() {
+
+  }
+
+  @Override
+  public void takeOff() {
+
   }
 }
