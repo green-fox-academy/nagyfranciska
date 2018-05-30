@@ -12,6 +12,6 @@ public class Violin extends StringedInstrument {
 
   @Override
   public void sound() {
-    String sound = "Screech";
+    System.out.println("Screech");
   }
 }

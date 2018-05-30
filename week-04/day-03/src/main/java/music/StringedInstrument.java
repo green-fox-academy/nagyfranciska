@@ -2,8 +2,8 @@ package main.java.music;
 
 abstract class StringedInstrument extends Instrument{
 
-  public int numberOfStrings;
-
+  int numberOfStrings;
+  String name;
 
   public abstract void sound();
 

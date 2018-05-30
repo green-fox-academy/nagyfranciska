@@ -12,6 +12,10 @@ public class ElectricGuitar extends StringedInstrument {
 
   @Override
   public void sound() {
-    String sound = "Twang";
+    if (numberOfStrings < 7) {
+      System.out.println("Twang");
+    } else {
+      System.out.println("Twangg");
+    }
   }
 }
