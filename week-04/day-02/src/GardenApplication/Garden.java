@@ -1,41 +1,59 @@
 package GardenApplication;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Garden {
 
-  double waterAmount;
-  ArrayList<Flower> flowers;
-  ArrayList<Tree> trees;
+  private String name;
+  private List<Plant> plants;
 
   public Garden() {
-    flowers = new ArrayList<>();
-    trees = new ArrayList<>();
-    waterAmount = 0;
+    plants = new ArrayList<>();
   }
 
-  public ArrayList addFlowers(Flower flower) {
-    flowers.add(flower);
-    return flowers;
+  public String getName() {
+    return name;
   }
 
-  public ArrayList addTrees(Tree tree) {
-    trees.add(tree);
-    return trees;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public void info() {                    // this after watering
-    for (Flower flower : flowers) {
-      if (flower.flowerWaterAmount < 5) {
-        System.out.println("The " + flower + "Flower needs water.");
+  public List<Plant> getPlants() {
+    return plants;
+  }
+
+  public void setPlants(List<Plant> plants) {
+    this.plants = plants;
+  }
+
+  public void gardenInfo() {
+    for (Plant plant : plants) {
+      if (plant.getWaterLevel() < plant.getWaterMin()) {
+        System.out.println("The " + plant.getColor() + " " + plant.getType() + " needs water.");
       } else {
-        System.out.println("The " + flower + "Flower doesn't need water.");
+        System.out.println("The " + plant.getColor() + " " + plant.getType() + " doesn't need water.");
       }
     }
-    for (Tree tree : trees) {
-      if (tree.treeWaterAmount < 10) {
-        System.out.println("The " + tree + "Tree needs water.");
-      } else {
-        System.out.println("The " + tree + "Tree doesn't need water.");
+  }
+
+  public int counter() {
+    int counter = 0;
+    for (Plant plant : plants) {
+      if ( plant.getWaterLevel() < plant.getWaterMin()) {
+        counter ++;
+      }
+    }
+    return counter;
+  }
+
+  public void waterPlants(int waterAmount) {
+    System.out.println("Water the garden.");
+    waterAmount /= counter();
+    for (Plant plant : plants) {
+      if ( plant.getWaterLevel() < plant.getWaterMin()) {
+        plant.setWaterLevel(waterAmount * plant.getWaterAbsorb());
       }
     }
   }
