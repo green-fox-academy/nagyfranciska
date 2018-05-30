@@ -1,4 +1,4 @@
-//import main.java.animals.*;
+import animals.*;
 
 public class Zoo {
   public static void main(String[] args) {
