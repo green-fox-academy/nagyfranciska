@@ -24,6 +24,8 @@ public class GreenFoxOrganisationMain {
     Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
     people.add(elon);
 
+    john.clone().introduce();
+
     student.skipDays(3);
 
     for (int i = 0; i < 5; i++) {
@@ -39,7 +41,7 @@ public class GreenFoxOrganisationMain {
       person.getGoal();
     }
 
-    Cohort awesome = new Cohort("AWESOME");
+    Cohort awesome = new Cohort("AWESOME ");
     awesome.addStudent(student);
     awesome.addStudent(john);
     awesome.addMentor(mentor);
