@@ -20,6 +20,8 @@ public class MainForDominoes {
     }
 
     System.out.println(snake);
+
+
   }
 
   static List<Dominoes> initializeDominoes() {

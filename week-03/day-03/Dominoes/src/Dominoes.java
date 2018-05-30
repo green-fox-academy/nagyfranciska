@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
 
 public class Dominoes implements Comparable {
   private final int[] values;
@@ -15,4 +19,8 @@ public class Dominoes implements Comparable {
     return "[" + values[0] + ", " + values[1] + "]";
   }
 
+  @Override
+  public int compareTo(Object o) {
+    return 0;
+  }
 }
