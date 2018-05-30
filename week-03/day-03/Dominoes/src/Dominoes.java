@@ -1,6 +1,5 @@
-import java.util.Arrays;
 
-public class Dominoes {
+public class Dominoes implements Comparable {
   private final int[] values;
 
   public Dominoes(int valueA, int valueB) {
@@ -15,4 +14,5 @@ public class Dominoes {
   public String toString() {
     return "[" + values[0] + ", " + values[1] + "]";
   }
+
 }
