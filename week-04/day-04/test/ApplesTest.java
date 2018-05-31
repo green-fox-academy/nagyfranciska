@@ -1,6 +1,5 @@
 import org.junit.BeforeClass;
 import org.junit.Test;
-import sun.plugin2.message.GetAppletMessage;
 
 import static org.junit.Assert.*;
 
@@ -16,7 +15,7 @@ public class ApplesTest {
   @Test
   public void should_returnApple() {
 
-    String expected = "cherry";
+    String expected = "apple";
     String result = apples.getApple();
     assertEquals(expected, result);
   }
