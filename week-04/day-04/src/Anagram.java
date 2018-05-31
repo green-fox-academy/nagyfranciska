@@ -1,40 +1,16 @@
+import java.util.Arrays;
+
 public class Anagram {
 
-  public static boolean anagram(String stringOne, String stringTwo) {
-    return (haveSameLength(stringOne, stringTwo) && haveSameCharacterSet(stringOne, stringTwo));
-  }
+  public boolean anagram(String stringOne, String stringTwo) {
+    char[] first = stringOne.toCharArray();
+    char[] second = stringTwo.toCharArray();
 
-  public static boolean haveSameLength(String stringOne, String stringTwo) {
+    Arrays.sort(first);
+    Arrays.sort(second);
 
-    // or
-    // stringOne.trim();
-    // stringTwo.trim();
-    // and no need for if, only return (stringOne.length() == stringTwo.length());
+    boolean anagram = Arrays.equals(first, second);
 
-    if (stringOne.contains(" ") && !stringTwo.contains(" ")) {
-      return false;
-    } else {
-      return (stringOne.length() == stringTwo.length());
-    }
-  }
-
-  public static boolean haveSameCharacterSet(String stringOne, String stringTwo) {
-
-    //  stringOne.toLowerCase();
-    //  stringTwo.toLowerCase();
-
-    char firsStringChar = ' ';
-    char secondStringChar = ' ';
-
-    for (int i = 0; i < stringOne.length(); i++) {
-      for (int j = 0; j < stringTwo.length(); j++) {
-        if (stringOne.charAt(i) == stringTwo.charAt(j)) {
-
-
-        return true;
-        }
-      }
-    }
-    return false;
+    return anagram;
   }
 }

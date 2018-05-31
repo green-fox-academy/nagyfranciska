@@ -1,8 +1,16 @@
-[Patchwork link](https://github.com/nagyfranciska/patchwork)
+# nagyfranciska GitHub
+
+Green Fox Academy - Fulvipes Cohort - Seagal Class (Java)
+
+## Repositories
+
+[Patchwork](https://github.com/nagyfranciska/patchwork)
+
+[Git-lesson-repo](https://github.com/nagyfranciska/git-lesson-repository)
 
 
-[Git-lesson-repository link](https://github.com/nagyfranciska/git-lesson-repository)
 
 
-[username.github.io webpage](https://nagyfranciska.github.io/)
+
+
 
