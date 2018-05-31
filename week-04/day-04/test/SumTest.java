@@ -42,4 +42,11 @@ public class SumTest {
     assertEquals(randomNumber1, sumTest.sum(testList));
   }
 
+  @Test
+  public void should_returnZero_whenNull() {
+    assertEquals(0, sumTest.sum(null));
+  }
+
+
+
 }
