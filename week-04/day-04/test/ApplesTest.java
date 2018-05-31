@@ -16,7 +16,7 @@ public class ApplesTest {
   @Test
   public void should_returnApple() {
 
-    String expected = "apple";
+    String expected = "cherry";
     String result = apples.getApple();
     assertEquals(expected, result);
   }
