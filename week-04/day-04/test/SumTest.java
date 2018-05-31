@@ -34,4 +34,12 @@ public class SumTest {
     assertEquals(0, sumTest.sum(testList));
   }
 
+  @Test
+  public void should_returnNumber_whenOneInteger() {
+    int randomNumber1 = 2;
+    testList.add(randomNumber1);
+
+    assertEquals(randomNumber1, sumTest.sum(testList));
+  }
+
 }
