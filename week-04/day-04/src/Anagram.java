@@ -1,25 +1,40 @@
 public class Anagram {
 
   public static boolean anagram(String stringOne, String stringTwo) {
-    boolean isAnagram = false;
-    if (haveSameLength(stringOne, stringTwo)) {
-      for (int i = 0; i < stringOne.length(); i++) {
-        for (int j = 0; j < stringTwo.length(); j++) {
-          if (stringOne.charAt(i) == stringTwo.charAt(j)) {
-            isAnagram = true;
-          }
-        }
-      }
-    }
-    return isAnagram;
+    return (haveSameLength(stringOne, stringTwo) && haveSameCharacterSet(stringOne, stringTwo));
   }
 
   public static boolean haveSameLength(String stringOne, String stringTwo) {
-    boolean sameLength = false;
-    if (stringOne.length() == stringTwo.length()) {
-      sameLength = true;
+
+    // or
+    // stringOne.trim();
+    // stringTwo.trim();
+    // and no need for if, only return (stringOne.length() == stringTwo.length());
+
+    if (stringOne.contains(" ") && !stringTwo.contains(" ")) {
+      return false;
+    } else {
+      return (stringOne.length() == stringTwo.length());
     }
-    return sameLength;
   }
 
+  public static boolean haveSameCharacterSet(String stringOne, String stringTwo) {
+
+    //  stringOne.toLowerCase();
+    //  stringTwo.toLowerCase();
+
+    char firsStringChar = ' ';
+    char secondStringChar = ' ';
+
+    for (int i = 0; i < stringOne.length(); i++) {
+      for (int j = 0; j < stringTwo.length(); j++) {
+        if (stringOne.charAt(i) == stringTwo.charAt(j)) {
+
+
+        return true;
+        }
+      }
+    }
+    return false;
+  }
 }
