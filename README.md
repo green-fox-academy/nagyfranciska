@@ -12,7 +12,7 @@ Green Fox Academy - Fulvipes Cohort - Seagal Class (Java)
 
 [Git-lesson-repo](https://github.com/nagyfranciska/git-lesson-repository)
 
-
+[Todo-app](https://github.com/nagyfranciska/todo-app.git)
 
 
 
