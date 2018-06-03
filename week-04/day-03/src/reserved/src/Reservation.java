@@ -1,4 +1,3 @@
-package reserved;
 import java.util.Random;
 
 public class Reservation implements Reservatiory {
@@ -20,12 +19,28 @@ public class Reservation implements Reservatiory {
     String uniCode = "";
     Random b = new Random();
     for (int i = 0; i < 8; i++) {
-      if (Math.random() <= 0.5) {
+      if (b.nextInt(1) == 1) {
         uniCode += (char)(b.nextInt(26) + 'A');
       } else {
         uniCode += (char)(b.nextInt(10) + '0');
       }
+
     }
     return uniCode;
   }
+
+//  @Override
+//  public String getCodeBooking() {
+//    String uniCode = "";
+//    Random b = new Random();
+//    for (int i = 0; i < 8; i++) {
+//      if (Math.random() <= 0.5) {
+//        uniCode += (char)(b.nextInt(26) + 'A');
+//      } else {
+//        uniCode += (char)(b.nextInt(10) + '0');
+//      }
+//
+//    }
+//    return uniCode;
+//  }
 }

@@ -1,5 +1,3 @@
-package reserved;
-
 public class ReservedMain {
   public static void main(String[] args) {
 
