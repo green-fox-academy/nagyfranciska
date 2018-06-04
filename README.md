@@ -8,6 +8,8 @@ Green Fox Academy - Fulvipes Cohort - Seagal Class (Java)
 
 ## Repositories
 
+[Wanderer Game](https://github.com/nagyfranciska/wanderer-java)
+
 [Patchwork](https://github.com/nagyfranciska/patchwork)
 
 [Git-lesson-repo](https://github.com/nagyfranciska/git-lesson-repository)
