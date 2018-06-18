@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Fox {
 
@@ -15,6 +17,18 @@ public class Fox {
     this.name = name;
     this.type = type;
     this.color = color;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public String getColor() {
+    return color;
   }
 
   public static void main(String[] args) {
@@ -33,7 +47,21 @@ public class Fox {
     foxes.add(fox4);
     foxes.add(fox5);
 
-    System.out.println(getGreenFoxes(foxes));
-    System.out.println(getGreenAndPallidaFoxes(foxes));
+    System.out.println("Green colored fox(es): " + getGreenFoxes(foxes));
+    System.out.println("Green colored pallida fox(es): " + getGreenAndPallidaFoxes(foxes));
+  }
+
+  public static String getGreenFoxes(List<Fox> listOfFoxes) {
+    return listOfFoxes.stream()
+      .filter(fox -> fox.getColor().equals("green"))
+      .map(fox -> fox.getName())
+      .collect(Collectors.joining(", "));
+  }
+
+  public static String getGreenAndPallidaFoxes(List<Fox> listOfFoxes) {
+    return listOfFoxes.stream()
+      .filter(fox -> fox.getColor().equals("green") && fox.getType().equals("pallida"))
+      .map(fox -> fox.getName())
+      .collect(Collectors.joining(", "));
   }
 }
