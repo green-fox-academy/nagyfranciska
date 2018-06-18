@@ -12,5 +12,8 @@ public class exercise03 {
     numbers.stream()
       .filter(n -> n >= 0)
       .map(n -> n * n);
+    //  or
+    //.map(n -> Math::pow(n, 2))
+
   }
 }
