@@ -8,6 +8,8 @@ public class exercise05 {
     example.chars()
       .mapToObj(s -> (char)s)
       .filter(s -> s.isUpperCase(s))
+      //  or
+      //.filter(Character::isUpperCase)
       .forEach(System.out::print);
 
   }
