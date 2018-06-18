@@ -16,7 +16,26 @@ public class exercise08 {
     Map<Integer, Integer> frequency = numbers.stream()
       .collect(Collectors.toConcurrentMap(key -> key, val -> 1, Integer::sum));
 
-    frequency.forEach((key, val) -> System.out.println(key + ":" + val));
+    System.out.println(frequency);
+
+    //  or
+
+    Map<Integer, Integer> frequency2 = numbers.stream()
+      .collect(Collectors.toMap(key -> key, val -> 1, Integer::sum));
+
+    //System.out.println(frequency2);
+    //  or
+    frequency2.forEach((key, val) -> System.out.println(key + ":" + val));
+
+    //  or
+
+    Map<Integer, Long> frequency3 = numbers.stream()
+      .collect(Collectors.groupingBy(key -> key, Collectors.counting()));
+
+    System.out.println(frequency3);
+    //  or
+    frequency3.forEach((key, val) -> System.out.println(key + " : " + val));
+
 
   }
 }
