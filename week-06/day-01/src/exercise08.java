@@ -34,7 +34,7 @@ public class exercise08 {
 
     System.out.println(frequency3);
     //  or
-    frequency3.forEach((key, val) -> System.out.println(key + " : " + val));
+    //frequency3.forEach((key, val) -> System.out.println(key + " : " + val));
 
 
   }
