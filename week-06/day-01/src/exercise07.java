@@ -22,7 +22,7 @@ public class exercise07 {
 
     Map<String, Integer> frequency2 = example.chars()
       .boxed()
-      .collect(toMap(key -> String.valueOf((char)key.intValue()), val -> 1, Integer::sum));
+      .collect(Collectors.toMap(key -> String.valueOf((char)key.intValue()), val -> 1, Integer::sum));
 
     frequency2.forEach(((key, val) -> System.out.print(key + ":" + val + "\n")));
 
