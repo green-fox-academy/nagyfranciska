@@ -12,23 +12,21 @@ form {
 }
 
 legend {
-    padding-bottom: 5%;
     font-size: 25px;
-    font-weight: bolder;
 }
 
 label {
     text-align: left;
     display: block;
+    padding-top: 25px;
 }
 
 input {
-    display: block;
     width: 300px;
-    box-sizing: border-box;
-    margin: auto;
+    margin: 5px 0;
     border: 1px solid rgba(180, 180, 180, 0.692);
     height: 40px;
+    border-radius: 3px;
 }
 
 input:focus {
@@ -37,4 +35,19 @@ input:focus {
 
 p {
     text-align: right;
+}
+
+label, p {
+    font-size: 10px;
+}
+
+.inputWithIcon { 
+    position: relative; 
+}
+
+.inputWithIcon i {
+    position: absolute;
+    top: 58px;
+    left: 270px;
+    color: rgb(133, 133, 133);
 }
