@@ -1,9 +1,39 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+body {
+  background-color: rgb(47, 131, 209);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 table {
-    border-collapse: collapse;
-  }
-  
-  td, th {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    text-align: left;
-  }
+  border-collapse: collapse;
+  text-align: left;
+}
+
+td, th {
+  border: 1px solid rgb(158, 158, 158);
+  padding: 15px;
+  width: 200px;
+  color: rgb(97, 96, 96);
+}
+
+th {
+  background-color: rgb(25, 25, 39);
+  color: rgb(233, 231, 231);
+  font-weight: normal;
+  box-shadow: 0 0 4px 0, rgb(97, 96, 96);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(233, 231, 231);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
