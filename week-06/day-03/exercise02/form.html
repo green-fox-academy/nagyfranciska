@@ -9,23 +9,22 @@
     </head>
 
     <body>
-        <div class="login">
-            <h3>ACCOUNT LOGIN</h3>
-            <form action="/my-handling-form-page" method="post">
-                <div>
-                    <label for="name">USERNAME</label>
-                    <input type="text" id="name" name="user_name">
-                </div>
-                <div>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="user_password">
-                </div>
-                <div class="button">
-                    <button type="login">Login</button>
-                </div>
-            </form>
-            
-        </div>
+     
+        <form action="/my-handling-form-page" method="post">
+            <legend>ACCOUNT LOGIN</legend>
+            <div>
+                <label for="name">USERNAME</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" name="user_password">
+                <p>Forgot Password?</p>
+            </div>
+            <div class="button">
+                <button type="submit">Login</button>
+            </div>
+        </form>
 
     </body>
 </html>

@@ -3,8 +3,38 @@ body {
     font-family: Montserrat, Arial, sans-serif;
   }
 
-.login {
+form {
     background-color: white;
-    max-width: 400px;
+    max-width: 300px;
     margin: auto;
+    margin-top: 5%;
+    padding: 3% 5%;
+}
+
+legend {
+    padding-bottom: 5%;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+label {
+    text-align: left;
+    display: block;
+}
+
+input {
+    display: block;
+    width: 300px;
+    box-sizing: border-box;
+    margin: auto;
+    border: 1px solid rgba(180, 180, 180, 0.692);
+    height: 40px;
+}
+
+input:focus {
+    border-color: rgba(75, 231, 127, 0.63);
+}
+
+p {
+    text-align: right;
 }
