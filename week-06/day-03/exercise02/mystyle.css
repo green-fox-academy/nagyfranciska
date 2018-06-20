@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(158, 158, 158);
+    font-family: Montserrat, Arial, sans-serif;
+  }
+
+.login {
+    background-color: white;
+    max-width: 400px;
+    margin: auto;
+}
