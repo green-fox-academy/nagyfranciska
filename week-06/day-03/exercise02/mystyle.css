@@ -52,3 +52,13 @@ label, p {
     left: 270px;
     color: rgb(133, 133, 133);
 }
+
+button {
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    border: none;
+    padding: 12px 40px;
+    margin: 15px 0;
+    border-radius: 25px;
+}
