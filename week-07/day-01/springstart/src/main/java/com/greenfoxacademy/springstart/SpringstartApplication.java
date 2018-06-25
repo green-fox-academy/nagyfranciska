@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class SpringstartApplication {
 
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringstartApplication.class, args);
 	}
 
 	@RequestMapping(value="/hello")
 	@ResponseBody
-	public String getHello() {
+	public static String getHello() {
 		return "Hello Word!";
 	}
 }
+
