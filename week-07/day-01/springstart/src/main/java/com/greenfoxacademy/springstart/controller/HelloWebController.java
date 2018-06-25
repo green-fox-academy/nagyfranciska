@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class HelloWebController {
 
-  private final AtomicLong counter = new AtomicLong(1);
+  private final AtomicLong counter = new AtomicLong();
 
   @RequestMapping("/web/greeting")
   public String greeting(Model model01, Model model02) {
