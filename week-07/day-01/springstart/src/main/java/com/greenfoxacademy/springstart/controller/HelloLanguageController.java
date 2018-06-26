@@ -18,4 +18,18 @@ public class HelloLanguageController {
     model02.addAttribute("name", "Roko");
     return "foreign";
   }
+
+  @RequestMapping("/web/foreign")
+  public String getSize(Model size) {
+    size.addAttribute("size", 10 + rand.nextInt(40));
+    return "foreign";
+  }
+
+  @RequestMapping("/web/foreign")
+  public String getColor(Model r, Model g, Model b) {
+    r.addAttribute("red", rand.nextInt(255));
+    g.addAttribute("green", rand.nextInt(255));
+    b.addAttribute("blue", rand.nextInt(255));
+    return "foreign";
+  }
 }
