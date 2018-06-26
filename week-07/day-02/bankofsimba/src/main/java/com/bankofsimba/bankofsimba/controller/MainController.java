@@ -6,22 +6,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class MainController {
 
-  private List<BankAccount> accounts;
+  public List<BankAccount> accounts;
 
-  public MainController() {
-    accounts = new ArrayList<>();
-  }
-
-  @GetMapping("")
-  public String showIndex(Model model) {
-    model.addAttribute("account", accounts);
+  @GetMapping("/index")
+  public String showIndexPage() {
     return "index";
   }
 
+  @GetMapping("/show")
+  public String showBankAccountsPage(Model model) {
 
+    accounts = Arrays.asList(
+      new BankAccount("Simba", 2000, "lion"),
+      new BankAccount(),
+      new BankAccount("Zazu", 50, "tucan")
+    );
+
+    model.addAttribute("accounts", accounts);
+    model.addAttribute("currency", "Đ");
+    return "accounts";
+  }
 }
