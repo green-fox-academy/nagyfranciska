@@ -12,7 +12,7 @@ public class MainController {
 
   public List<BankAccount> accounts;
 
-  @GetMapping("/index")
+  @GetMapping("")
   public String showIndexPage() {
     return "index";
   }
@@ -21,9 +21,11 @@ public class MainController {
   public String showBankAccountsPage(Model model) {
 
     accounts = Arrays.asList(
-      new BankAccount("Simba", 2000, "lion"),
-      new BankAccount(),
-      new BankAccount("Zazu", 50, "tucan")
+      new BankAccount("Simba", 2000, "lion", true, true),
+      new BankAccount("Nala", 2500, "lioness", false, true),
+      new BankAccount("Scar", 50, "lion", false, false),
+      new BankAccount("Rafiki", 700, "mandrill", false, true),
+      new BankAccount("Pumbaa", 150, "warthog", false, true)
     );
 
     model.addAttribute("accounts", accounts);
