@@ -13,13 +13,15 @@
         <tr>
             <th>Name</th>
             <th>Balance</th>
+            <th>Currency</th>
             <th>Type</th>
         </tr>
     </thead>
     <tbody>
         <tr th:each="account : ${accounts}">
             <td th:text="${account.name}"></td>
-            <td th:text="${#numbers.formatDecimal(account.balance, 1, 'COMMA', 2, 'POINT')} + ' ' + ${currency}"></td>
+            <td th:text="${#numbers.formatDecimal(account.balance, 1, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${currency}"></td>
             <td th:text="${account.animalType}"></td>
         </tr>
     </tbody>

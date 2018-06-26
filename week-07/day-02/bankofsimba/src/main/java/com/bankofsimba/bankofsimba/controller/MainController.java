@@ -4,8 +4,6 @@ import com.bankofsimba.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,7 +27,14 @@ public class MainController {
     );
 
     model.addAttribute("accounts", accounts);
-    model.addAttribute("currency", "Đ");
+    model.addAttribute("currency", "Đingo");
     return "accounts";
   }
+
+  @GetMapping("/fun")
+  public String showText(Model model) {
+    model.addAttribute("fun", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+    return "fun";
+  }
+
 }
