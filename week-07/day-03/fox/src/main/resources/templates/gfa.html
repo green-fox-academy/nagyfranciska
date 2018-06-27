@@ -5,9 +5,11 @@
     <title>Green Fox Academy</title>
 </head>
 <body>
-<h3>Links</h3>
+<h3>Counter:</h3>
+<p th:text="'The list contains ' + ${size} + ' names at this moment.'"></p>
+<h3>Links:</h3>
 <a href="/gfa/list">List all students</a>
-<a href="/gfa/add">Add</a>
-<a href="/gfa/save">Save</a>
+<a href="/gfa/add">Add new student</a>
+
 </body>
 </html>
