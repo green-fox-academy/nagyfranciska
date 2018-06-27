@@ -1,3 +1,8 @@
+body {
+    background-color: cornsilk;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 table {
     border-collapse: collapse;
     text-align: left;
@@ -5,3 +10,25 @@ table {
     width: 40%;
     margin-top: 10%;
 }
+
+td, th {
+    border-bottom: 1px solid cadetblue;
+    border-right: 1px solid cadetblue;
+    padding: 15px 20px;
+    color: rgb(97, 96, 96);
+}
+
+th {
+    background-color: rgb(25, 25, 39);
+    color: rgb(233, 231, 231);
+    font-weight: normal;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(233, 231, 231);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+

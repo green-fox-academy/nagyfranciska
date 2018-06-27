@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Accounts at Bank of Simba</title>
-    <link href="../css/style.css" th:href="@{css/style.css}" type="text/css" />
+    <link href="../static/css/style.css" th:href="@{css/style.css}" type="text/css" rel="stylesheet"/>
     <meta charset="utf-8" />
 </head>
 <body>
@@ -22,8 +22,9 @@
     </thead>
     <tbody>
         <tr th:each="account : ${accounts}">
-            <td th:text="'#' + ${account.getId()}"></td>
-            <td th:text="${account.name}"></td>
+            <td th:text="'#' + ${accountStat.index}"></td>
+            <td th:if="${account.king} == true" th:style="'color: maroon'" th:text="${account.name}"></td>
+            <td th:unless="${account.king} == true" th:text="${account.name}"></td>
             <td th:text="${#numbers.formatDecimal(account.balance, 1, 'COMMA', 2, 'POINT')}"></td>
             <td th:text="${currency}"></td>
             <td th:text="${account.animalType}"></td>
@@ -35,6 +36,5 @@
     </tbody>
 </table>
 
-<button><a th:href="@{/index.html}">Back to index</a></button>
 </body>
 </html>

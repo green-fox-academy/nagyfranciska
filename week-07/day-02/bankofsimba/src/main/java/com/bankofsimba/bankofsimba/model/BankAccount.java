@@ -2,8 +2,6 @@ package com.bankofsimba.bankofsimba.model;
 
 public class BankAccount {
 
-  public static int counter = 1;
-  private int id;
   private String name;
   private int balance;
   private String animalType;
@@ -12,26 +10,14 @@ public class BankAccount {
 
   public BankAccount() {
     this("owner", 0, "unknown", false, false);
-    counter ++;
   }
 
   public BankAccount(String owner, int balance, String type, boolean isKing, boolean isGood) {
-    this.id = counter;
     this.name = owner;
     this.balance = balance;
     this.animalType = type;
     this.isKing = isKing;
     this.isGood = isGood;
-    counter ++;
-  }
-
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getName() {

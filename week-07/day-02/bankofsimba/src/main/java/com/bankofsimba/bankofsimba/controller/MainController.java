@@ -4,6 +4,9 @@ import com.bankofsimba.bankofsimba.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +40,17 @@ public class MainController {
   public String showText(Model model) {
     model.addAttribute("fun", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
     return "fun";
+  }
+
+  @GetMapping("/form")
+  public String showTopUpPage(Model model) {
+    model.addAttribute("accounts", accounts);
+    return "form";
+  }
+
+  @PostMapping("/form")
+  public String increaseBalance(@RequestParam String alma) {
+    return "";
   }
 
 }
