@@ -37,5 +37,15 @@ public class MainController {
     return "save";
   }
 
+  @GetMapping("/gfa/check")
+  public String showCheckPage() {
+    return "check";
+  }
 
+  @GetMapping("/gfa/checked")
+  public String showCheckResultPage(@RequestParam("checkName") String name, Model model) {
+    model.addAttribute("student", name);
+    model.addAttribute("onList", studentService.check(name));
+    return "checked";
+  }
 }

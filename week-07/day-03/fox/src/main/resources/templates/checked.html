@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Check Result</title>
+</head>
+<body>
+<p th:if="${onList}" th:text="${student} + ' is already on the list!'"></p>
+<p th:unless="${onList}" th:text="${student} + ' is not on the list yet!'"></p>
+<a href="/gfa/add">Add student to the list</a><br/>
+<a href="/gfa/check">Check another student</a><br/>
+<a href="/gfa">Back to main</a>
+</body>
+</html>

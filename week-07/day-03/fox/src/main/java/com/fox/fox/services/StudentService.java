@@ -26,4 +26,13 @@ public class StudentService {
   public int count() {
     return names.size();
   }
+
+  public boolean check(String name) {
+    for (String student : names) {
+      if (student.equals(name)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
