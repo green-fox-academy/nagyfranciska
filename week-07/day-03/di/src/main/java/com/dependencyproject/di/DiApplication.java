@@ -6,10 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DiApplication implements CommandLineRunner {
+public class DiApplication implements CommandLineRunner{
 
 	@Autowired
 	Printer printer;
+
+	@Autowired
+	Color color;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DiApplication.class, args);
@@ -18,5 +21,6 @@ public class DiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		printer.log("hello");
+		color.printColor();
 	}
 }
