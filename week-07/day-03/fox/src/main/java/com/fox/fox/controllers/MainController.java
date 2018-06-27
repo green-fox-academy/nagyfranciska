@@ -31,9 +31,10 @@ public class MainController {
   }
 
   @GetMapping("/gfa/save")
-  public String saveNewStudent(@RequestParam("studentName") String name) {
+  public String saveNewStudent(@RequestParam("studentName") String name, Model model) {
     studentService.save(name);
-    return "redirect:/gfa/list";
+    model.addAttribute("name", name);
+    return "save";
   }
 
 
