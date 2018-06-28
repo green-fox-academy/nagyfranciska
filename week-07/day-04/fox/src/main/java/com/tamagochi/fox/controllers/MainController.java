@@ -25,7 +25,7 @@ public class MainController {
     return "redirect:/" + fox;
   }
 
-  @GetMapping("{fox}")
+  @GetMapping("/{name}")
   public String renderFoxPage(@PathVariable(value = "name") String foxName, Model model) {
     model.addAttribute("fox", foxName);
     return "index";
