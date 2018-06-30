@@ -6,9 +6,9 @@ import java.util.List;
 public class Fox {
 
   private String name;
-  private List<Trick> tricks;
-  private List<Food> foods;
-  private List<Drink> drinks;
+  private List<String> tricks;
+  private List<String> foods;
+  private List<String> drinks;
 
   public Fox() {
     this("Vuk");
@@ -29,27 +29,27 @@ public class Fox {
     this.name = name;
   }
 
-  public List<Trick> getTricks() {
+  public List<String> getTricks() {
     return tricks;
   }
 
-  public void setTricks(List<Trick> trickList) {
+  public void setTricks(List<String> trickList) {
     this.tricks = trickList;
   }
 
-  public List<Food> getFoods() {
+  public List<String> getFoods() {
     return foods;
   }
 
-  public void setFoods(List<Food> foods) {
+  public void setFoods(List<String> foods) {
     this.foods = foods;
   }
 
-  public List<Drink> getDrinks() {
+  public List<String> getDrinks() {
     return drinks;
   }
 
-  public void setDrinks(List<Drink> drinks) {
+  public void setDrinks(List<String> drinks) {
     this.drinks = drinks;
   }
 }

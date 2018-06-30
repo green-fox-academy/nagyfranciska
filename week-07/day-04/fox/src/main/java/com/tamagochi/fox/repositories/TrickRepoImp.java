@@ -1,6 +1,5 @@
 package com.tamagochi.fox.repositories;
 
-import com.tamagochi.fox.models.Trick;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -11,13 +10,13 @@ import java.util.List;
 @Component
 public class TrickRepoImp implements TrickRepo{
 
-  private List<Trick> trickList;
+  private List<String> trickList;
 
   public TrickRepoImp() {
     trickList = new ArrayList<>();
-    trickList.add(new Trick("sit"));
-    trickList.add(new Trick("sleep"));
-    trickList.add(new Trick("hunt"));
+    trickList.add("sit");
+    trickList.add("sleep");
+    trickList.add("hunt");
   }
 
   @Override

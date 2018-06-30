@@ -1,7 +1,5 @@
 package com.tamagochi.fox.repositories;
 
-import com.tamagochi.fox.models.Drink;
-import com.tamagochi.fox.models.Food;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -12,22 +10,22 @@ import java.util.List;
 @Component
 public class NutritionRepoImp implements NutritionRepo {
 
-  private List<Food> foodList;
-  private List<Drink> drinkList;
+  private List<String> foodList;
+  private List<String> drinkList;
 
   public NutritionRepoImp() {
     foodList = new ArrayList<>();
     drinkList = new ArrayList<>();
 
-    foodList.add(new Food("frog"));
-    foodList.add(new Food("duck"));
-    foodList.add(new Food("chicken"));
-    foodList.add(new Food("stag"));
+    foodList.add("frog");
+    foodList.add("crow");
+    foodList.add("duck");
+    foodList.add("chicken");
 
-    drinkList.add(new Drink("water"));
-    drinkList.add(new Drink("blood"));
-    drinkList.add(new Drink("juice"));
-    drinkList.add(new Drink("coffee"));
+    drinkList.add("water");
+    drinkList.add("blood");
+    drinkList.add("juice");
+    drinkList.add("coffee");
   }
 
   @Override
