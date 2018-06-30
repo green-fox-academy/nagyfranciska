@@ -6,20 +6,21 @@
 </head>
 <body>
 
-<h3>Nutrition Store</h3>
+<h1>Nutrition Store</h1>
 
-<h1>Select nutrition for your pet:</h1>
+<h3>Select nutrition for your pet:</h3>
 
+<label>Let's have  </label>
 <select>
-    <option>food</option>
+    <option th:each="food : ${foods}" th:text="${food}"></option>
 </select>
 
-
+<label>  with  </label>
 <select>
-    <option>drink</option>
+    <option th:each="drink : ${drinks}" th:text="${drink}"></option>
 </select>
 
-<input type="submit" value="Let's have them!" />
+<input type="submit" value="Yumm!" />
 
 
 </body>
