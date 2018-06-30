@@ -6,18 +6,16 @@
 </head>
 <body>
 
-<a></a><br/>
-<a></a><br/>
-<a></a><br/>
+<a href="/center">Trick Center</a><br/>
+<a href="/store">Nutrition Store</a><br/>
 
 <img src="/images/greenfox.png" alt="Fox Image"><br/>
 
-<p th:text="'This is ' + ${fox.getName()} + '. Currently living on water and bread. He knows 2 tricks.'"></p>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on water and bread. He knows ' + ${fox.getTricks().size() + 1}+ ' tricks.'"></p>
 
 <h2>Known tricks</h2>
 <ul>
-    <li></li>
-    <li></li>
+    <li>code HTML</li>
 </ul>
 
 </body>

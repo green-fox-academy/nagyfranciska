@@ -2,17 +2,17 @@ package com.tamagochi.fox.models;
 
 public class Drink {
 
-  public String[] drinkList;
+  public String drink;
 
-  public Drink() {
-    drinkList = new String[] {"water", "blood", "juice"};
+  public Drink(String drink) {
+    this.drink = drink;
   }
 
-  public String[] getDrinkList() {
-    return drinkList;
+  public String getDrink() {
+    return drink;
   }
 
-  public void setDrinkList(String[] drinkList) {
-    this.drinkList = drinkList;
+  public void setDrink(String drink) {
+    this.drink = drink;
   }
 }

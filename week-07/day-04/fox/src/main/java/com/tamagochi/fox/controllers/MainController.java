@@ -29,4 +29,14 @@ public class MainController {
     model.addAttribute("fox", foxService.getFox(fox));
     return "profile";
   }
+
+  @GetMapping("/store")
+  public String renderNutritionStore() {
+    return "nutrition";
+  }
+
+  @GetMapping("/center")
+  public String renderTrickCenter() {
+    return "trickcenter";
+  }
 }

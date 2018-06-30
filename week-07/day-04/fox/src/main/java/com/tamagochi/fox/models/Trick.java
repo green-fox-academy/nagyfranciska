@@ -2,17 +2,17 @@ package com.tamagochi.fox.models;
 
 public class Trick {
 
-  private String[] trickList;
+  private String trick;
 
-  public Trick() {
-    trickList = new String[]{"sit", "sleep", "hunt"};
+  public Trick(String description) {
+    this.trick = description;
   }
 
-  public String[] getTrickList() {
-    return trickList;
+  public String getTrick() {
+    return trick;
   }
 
-  public void setTrickList(String[] tricks) {
-    this.trickList = tricks;
+  public void setTrick(String trick) {
+    this.trick = trick;
   }
 }

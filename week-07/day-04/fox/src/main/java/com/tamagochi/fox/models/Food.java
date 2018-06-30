@@ -2,17 +2,17 @@ package com.tamagochi.fox.models;
 
 public class Food {
 
-  private String[] foodList;
+  private String food;
 
-  public Food() {
-    foodList = new String[] {"frog", "duck", "chicken"};
+  public Food(String food) {
+    this.food = food;
   }
 
-  public String[] getFoodList() {
-    return foodList;
+  public String getFood() {
+    return food;
   }
 
-  public void setFoodList(String[] foodList) {
-    this.foodList = foodList;
+  public void setFood(String food) {
+    this.food = food;
   }
 }
