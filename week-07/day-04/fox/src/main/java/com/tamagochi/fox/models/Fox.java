@@ -7,8 +7,8 @@ public class Fox {
 
   private String name;
   private List<String> tricks;
-  private List<String> foods;
-  private List<String> drinks;
+  private String food;
+  private String drink;
 
   public Fox() {
     this("Vuk");
@@ -17,8 +17,8 @@ public class Fox {
   public Fox(String name) {
     this.name = name;
     tricks = new ArrayList<>();
-    foods = new ArrayList<>();
-    drinks = new ArrayList<>();
+    this.food = "pizza";
+    this.drink = "cola";
   }
 
   public String getName() {
@@ -29,27 +29,28 @@ public class Fox {
     this.name = name;
   }
 
+  public String getFood() {
+    return food;
+  }
+
+  public void setFood(String food) {
+    this.food = food;
+  }
+
+  public String getDrink() {
+    return drink;
+  }
+
+  public void setDrink(String drink) {
+    this.drink = drink;
+  }
+
   public List<String> getTricks() {
     return tricks;
   }
 
-  public void setTricks(List<String> trickList) {
-    this.tricks = trickList;
+  public void addTrick(String trick) {
+    tricks.add(trick);
   }
 
-  public List<String> getFoods() {
-    return foods;
-  }
-
-  public void setFoods(List<String> foods) {
-    this.foods = foods;
-  }
-
-  public List<String> getDrinks() {
-    return drinks;
-  }
-
-  public void setDrinks(List<String> drinks) {
-    this.drinks = drinks;
-  }
 }

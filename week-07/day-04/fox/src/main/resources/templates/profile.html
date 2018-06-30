@@ -11,11 +11,13 @@
 
 <img src="/images/greenfox.png" alt="Fox Image"><br/>
 
-<p th:text="'This is ' + ${fox.getName()} + '. Currently living on water and bread. He knows ' + ${fox.getTricks().size() + 1}+ ' tricks.'"></p>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
 
 <h2>Known tricks</h2>
+
 <ul>
-    <li>code HTML</li>
+    <li th:if="${fox.getTricks().size() == 0}" th:text="${fox.getName()} + ' knows no tricks yet.'"></li>
+    <li th:unless="${fox.getTricks().size() == 0}" th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
 </ul>
 
 </body>

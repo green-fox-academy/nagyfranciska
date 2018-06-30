@@ -10,12 +10,12 @@
 
 <h3>Select nutrition for your pet:</h3>
 
-<label>Let's have  </label>
+<label>Let's have a </label>
 <select>
     <option th:each="food : ${foods}" th:text="${food}"></option>
 </select>
 
-<label>  with  </label>
+<label>  with some </label>
 <select>
     <option th:each="drink : ${drinks}" th:text="${drink}"></option>
 </select>
