@@ -17,16 +17,16 @@ public class NutritionRepoImp implements NutritionRepo {
     foodList = new ArrayList<>();
     drinkList = new ArrayList<>();
 
-    foodList.add("pizza");
+    foodList.add("salad");
     foodList.add("frog");
-    foodList.add("crow");
     foodList.add("duck");
     foodList.add("chicken");
+    foodList.add("cheese");
 
-    drinkList.add("cola");
     drinkList.add("water");
     drinkList.add("blood");
     drinkList.add("juice");
+    drinkList.add("beer");
     drinkList.add("coffee");
   }
 

@@ -16,7 +16,7 @@
 
 <img src="/images/fox_default.png" alt="Fox Image"><br/>
 
-<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. ' + ${fox.getName()} + ' knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
 
 <h2>Known tricks</h2>
 

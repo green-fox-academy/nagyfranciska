@@ -17,8 +17,8 @@ public class Fox {
   public Fox(String name) {
     this.name = name;
     tricks = new ArrayList<>();
-    this.food = "pizza";
-    this.drink = "cola";
+    this.food = "salad";
+    this.drink = "water";
   }
 
   public String getName() {

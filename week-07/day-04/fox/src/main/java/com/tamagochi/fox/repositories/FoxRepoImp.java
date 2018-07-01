@@ -3,7 +3,6 @@ package com.tamagochi.fox.repositories;
 import com.tamagochi.fox.models.Fox;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.Map;
 
