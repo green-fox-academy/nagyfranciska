@@ -25,5 +25,18 @@
     <li th:unless="${fox.getTricks().size() == 0}" th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
 </ul>
 
+<div th:if="${fox.getTricks().size() == 0}">
+    <input type="hidden" th:text="'No tricks to demonstrate yet.'" />
+</div>
+<div th:unless="${fox.getTricks().size() == 0}">
+    <form action="/demonstrate" method="get">
+        <label th:text="'Demonstrate how to :'"></label>
+        <select th:name="trick">
+            <option th:each="trick : ${fox.getTricks()}" th:text="${trick}" th:value="${trick}"></option>
+        </select>
+        <input type="submit" value="Let's see!" />
+    </form>
+</div>
+
 </body>
 </html>
