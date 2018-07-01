@@ -10,22 +10,19 @@
 
 <h3>Select nutrition for your pet:</h3>
 
-<label>Let's have a </label>
-<select>
-    <option th:each="food : ${foods}" th:text="${food}"></option>
-</select>
-
-<label>  with some </label>
-<select>
-    <option th:each="drink : ${drinks}" th:text="${drink}"></option>
-</select>
-
 <form action="/feed" method="get">
-    <input type="hidden" name="drink" th:value="${drinks}"/>
-    <input type="hidden" name="eat" th:value="${foods}"/>
-</form>
+    <input type="hidden" name="fox" th:value="${fox.getName()}"/>
 
-<input type="submit" value="Yumm!"  />
+    <label>Let's have a </label>
+    <select th:name="food">
+        <option th:each="food : ${foods}" th:text="${food}" th:value="${food}"></option>
+    </select>
+    <label>  with some </label>
+    <select th:name="drink">
+        <option th:each="drink : ${drinks}" th:text="${drink}" th:value="${drink}"></option>
+    </select>
+    <input type="submit" value="Yumm!" />
+</form>
 
 </body>
 </html>

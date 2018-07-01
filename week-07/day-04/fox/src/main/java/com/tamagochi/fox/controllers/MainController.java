@@ -6,7 +6,6 @@ import com.tamagochi.fox.repositories.TrickRepo;
 import com.tamagochi.fox.repositories.TrickRepoImp;
 import com.tamagochi.fox.services.FoxService;
 import com.tamagochi.fox.services.FoxServiceImp;
-import org.hibernate.validator.constraints.pl.REGON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,10 +48,10 @@ public class MainController {
   }
 
   @GetMapping("/feed")
-  public String feedFox(@RequestParam("eat") String eat, @RequestParam("drink") String drink, @RequestParam("name") String name) {
-    foxService.getFox(name).setDrink(drink);
-    foxService.getFox(name).setFood(eat);
-    return "redirect: /profile";
+  public String feedFox(@RequestParam("food") String food, @RequestParam("drink") String drink, @RequestParam("fox") String fox) {
+    foxService.getFox(fox).setDrink(drink);
+    foxService.getFox(fox).setFood(food);
+    return "redirect:profile?fox=" + fox;
   }
 
   @GetMapping("profile/{fox}/trickcenter")
