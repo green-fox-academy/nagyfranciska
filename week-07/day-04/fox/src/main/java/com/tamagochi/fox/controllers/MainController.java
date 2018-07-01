@@ -63,7 +63,9 @@ public class MainController {
 
   @GetMapping("/learn")
   public String teachFox(@RequestParam("trick") String trick, @RequestParam("fox") String fox) {
-    foxService.getFox(fox).addTrick(trick);
+    if (!foxService.getFox(fox).getTricks().contains(trick)) {
+      foxService.getFox(fox).addTrick(trick);
+    }
     return "redirect:profile?fox=" + fox;
   }
 }

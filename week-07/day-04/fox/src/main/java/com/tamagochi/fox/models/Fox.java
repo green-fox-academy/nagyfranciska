@@ -49,8 +49,7 @@ public class Fox {
     return tricks;
   }
 
-  public void addTrick(String trick) {
-    tricks.add(trick);
+  public void addTrick(String newTrick) {
+    tricks.add(newTrick);
   }
-
 }
