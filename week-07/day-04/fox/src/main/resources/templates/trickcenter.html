@@ -10,10 +10,13 @@
 
 <h3>Teach your pet a new trick:</h3>
 
-<select>
-    <option th:each="trick : ${tricks}" th:text="${trick}"></option>
-</select>
+<form action="/learn" method="get">
+    <input type="hidden" name="fox" th:value="${fox.getName()}"/>
+    <select th:name="trick">
+        <option th:each="trick : ${tricks}" th:text="${trick}" th:value="${trick}"></option>
+    </select>
 <input type="submit" value="Let's learn it" />
+</form>
 
 </body>
 </html>

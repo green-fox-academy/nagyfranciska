@@ -20,8 +20,12 @@
     <option th:each="drink : ${drinks}" th:text="${drink}"></option>
 </select>
 
-<input type="submit" value="Yumm!" />
+<form action="/feed" method="get">
+    <input type="hidden" name="drink" th:value="${drinks}"/>
+    <input type="hidden" name="eat" th:value="${foods}"/>
+</form>
 
+<input type="submit" value="Yumm!"  />
 
 </body>
 </html>
