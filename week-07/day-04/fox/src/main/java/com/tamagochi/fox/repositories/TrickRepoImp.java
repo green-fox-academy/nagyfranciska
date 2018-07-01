@@ -17,6 +17,7 @@ public class TrickRepoImp implements TrickRepo{
     trickList.add("sit");
     trickList.add("sleep");
     trickList.add("hunt");
+    trickList.add("code");
   }
 
   @Override
