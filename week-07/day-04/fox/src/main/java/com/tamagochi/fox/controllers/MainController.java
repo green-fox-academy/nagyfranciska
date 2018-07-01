@@ -67,8 +67,8 @@ public class MainController {
   }
 
   @GetMapping("/demonstrate")
-  public String demonstrateTrick(@RequestParam("fox") String fox) {
-    foxService.getFox(fox).setImage("fox_sit.png");
+  public String demonstrateTrick(@RequestParam(name="fox") String fox, @RequestParam(name="position") String position) {
+    foxService.getFox(fox).setImage(position);
     return "redirect:profile?fox=" + fox;
   }
 }

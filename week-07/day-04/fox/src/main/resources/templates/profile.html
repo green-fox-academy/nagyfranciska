@@ -14,7 +14,7 @@
     <input type="submit" value="Trick Center">
 </form>
 
-<img th:src="'/images/' + ${fox.getImage()}" alt="Fox Image"><br/>
+<img th:src="'/images/' + ${fox.getImage()} + '.png'" alt="Fox Image"><br/>
 
 <p th:if="${fox.getTricks().size()} < 2" th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. ' + ${fox.getName()} + ' knows ' + ${fox.getTricks().size()} + ' trick.'"></p>
 <p th:unless="${fox.getTricks().size()} < 2" th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. ' + ${fox.getName()} + ' knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
@@ -33,9 +33,9 @@
     <form action="/demonstrate" method="get">
         <input type="hidden" name="fox" th:value="${fox.getName()}"/>
         <label th:text="'Demonstrate how to :'"></label>
-        <select th:name="trick">
+        <select th:name="position">
             <option th:each="trick : ${fox.getTricks()}" th:text="${trick}" th:value="${trick}"></option>
-            <option th:text="stand" th:value="fox_default.png"></option>
+            <option th:text="stand" th:value="stand"></option>
         </select>
         <input type="submit" value="Let's see!" />
     </form>

@@ -12,7 +12,6 @@
 
 <form action="/feed" method="get">
     <input type="hidden" name="fox" th:value="${fox.getName()}"/>
-
     <label>Let's have a </label>
     <select th:name="food">
         <option th:each="food : ${foods}" th:text="${food}" th:value="${food}"></option>

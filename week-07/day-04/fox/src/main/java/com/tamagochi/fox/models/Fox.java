@@ -19,7 +19,7 @@ public class Fox {
     tricks = new ArrayList<>();
     this.food = "salad";
     this.drink = "water";
-    this.image = "fox_default.png";
+    this.image = "stand";
   }
 
   public String getName() {
