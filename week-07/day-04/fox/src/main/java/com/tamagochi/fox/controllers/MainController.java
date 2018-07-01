@@ -1,9 +1,6 @@
 package com.tamagochi.fox.controllers;
 
-import com.tamagochi.fox.repositories.NutritionRepo;
-import com.tamagochi.fox.repositories.NutritionRepoImp;
-import com.tamagochi.fox.repositories.TrickRepo;
-import com.tamagochi.fox.repositories.TrickRepoImp;
+import com.tamagochi.fox.repositories.*;
 import com.tamagochi.fox.services.FoxService;
 import com.tamagochi.fox.services.FoxServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +63,12 @@ public class MainController {
     if (!foxService.getFox(fox).getTricks().contains(trick)) {
       foxService.getFox(fox).addTrick(trick);
     }
+    return "redirect:profile?fox=" + fox;
+  }
+
+  @GetMapping("/demonstrate")
+  public String demonstrateTrick(@RequestParam("fox") String fox) {
+    foxService.getFox(fox).setImage("fox_sit.png");
     return "redirect:profile?fox=" + fox;
   }
 }

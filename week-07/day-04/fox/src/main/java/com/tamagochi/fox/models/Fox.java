@@ -9,9 +9,9 @@ public class Fox {
   private List<String> tricks;
   private String food;
   private String drink;
+  private String image;
 
   public Fox() {
-    this("Vuk");
   }
 
   public Fox(String name) {
@@ -19,6 +19,7 @@ public class Fox {
     tricks = new ArrayList<>();
     this.food = "salad";
     this.drink = "water";
+    this.image = "fox_default.png";
   }
 
   public String getName() {
@@ -51,5 +52,13 @@ public class Fox {
 
   public void addTrick(String newTrick) {
     tricks.add(newTrick);
+  }
+
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 }
