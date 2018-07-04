@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${fox.getName()} + '\'s profile'"></title>
+</head>
+<body>
+
+<form th:action="'/profile/' + ${fox.name} + '/nutrition'" method="get">
+    <input type="submit" value="Nutrition Store">
+</form>
+
+<form th:action="'/profile/' + ${fox.name} + '/trickcenter'" method="get">
+    <input type="submit" value="Trick Center">
+</form>
+
+<img th:src="'/images/' + ${fox.getImage()} + '.png'" alt="Fox Image"><br/>
+
+<p th:if="${fox.getTricks().size()} < 2" th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. ' + ${fox.getName()} + ' knows ' + ${fox.getTricks().size()} + ' trick.'"></p>
+<p th:unless="${fox.getTricks().size()} < 2" th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. ' + ${fox.getName()} + ' knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
+
+<h2>Known tricks</h2>
+
+<ul>
+    <li th:if="${fox.getTricks().size() == 0}" th:text="${fox.getName()} + ' knows no tricks yet.'"><input type="submit" th:value="Demonstrate" /></li>
+    <li th:unless="${fox.getTricks().size() == 0}" th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
+</ul>
+
+<div th:if="${fox.getTricks().size() == 0}">
+    <input type="hidden" th:text="'No tricks to demonstrate yet.'" />
+</div>
+<div th:unless="${fox.getTricks().size() == 0}">
+    <form action="/demonstrate" method="get">
+        <input type="hidden" name="fox" th:value="${fox.getName()}"/>
+        <label th:text="'Demonstrate how to :'"></label>
+        <select th:name="position">
+            <option th:each="trick : ${fox.getTricks()}" th:text="${trick}" th:value="${trick}"></option>
+            <option th:text="stand" th:value="stand"></option>
+        </select>
+        <input type="submit" value="Let's see!" />
+    </form>
+</div>
+
+</body>
+</html>
