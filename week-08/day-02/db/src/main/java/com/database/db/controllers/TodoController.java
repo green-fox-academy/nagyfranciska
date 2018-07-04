@@ -35,12 +35,22 @@ public class TodoController {
   }
 
   @GetMapping("/edit/{id}")
-  public String renderEdit() {
+  public String renderEdit(@PathVariable("id") String id, Model model) {
+    model.addAttribute("id", id);
     return "edit";
   }
 
-//  @GetMapping("editTodo")
-//  public String editTodo() {
-//    return "redirect:";
-//  }
+  @GetMapping("editTodo")
+  public String editTodo(@RequestParam(value = "id") String id, @RequestParam("description") String description, @RequestParam("urgent") Boolean urgent, @RequestParam("done") Boolean done) {
+    Long todoID = Long.parseLong(id);
+    Todo todo = todoRepo.findTodoById(todoID);
+    if (description.isEmpty()) {
+    } else {
+      todo.setTitle(description);
+    }
+    todo.setUrgent(urgent);
+    todo.setDone(done);
+    todoRepo.save(todo);
+    return "redirect:";
+  }
 }

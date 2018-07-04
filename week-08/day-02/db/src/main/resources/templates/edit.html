@@ -8,7 +8,8 @@
 
 <h1>Edit todo:</h1>
 
-<form action="editTodo">
+<form action="editTodo" method="get">
+    <input type="hidden" name="id" th:value="${id}" />
     <label for="desc">Todo description</label>
     <input id="desc" type="text" name="description"/><br/>
     <label for="urgent">Urgent</label>
