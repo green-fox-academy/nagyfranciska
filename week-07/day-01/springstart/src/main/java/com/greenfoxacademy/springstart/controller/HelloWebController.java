@@ -12,9 +12,8 @@ public class HelloWebController {
   private final AtomicLong counter = new AtomicLong();
 
   @RequestMapping("/web/greeting")
-  public String greeting(Model model01, Model model02) {
-    model01.addAttribute("name", " Roko" + "\'s" + " Basilisk");
-    model02.addAttribute("number", counter.incrementAndGet());
+  public String greeting(Model model) {
+    model.addAttribute("number", counter.incrementAndGet());
     return "greeting";
   }
 }

@@ -6,5 +6,20 @@
 </head>
 <body>
 
+<h1>Edit todo:</h1>
+
+<form action="edit/{id}/editTodo">
+    <label for="desc">Todo description</label>
+    <input id="desc" type="text" name="description"/><br/>
+    <label for="urgent">Urgent</label>
+    <input id="urgent" type="checkbox" name="urgent"/><br/>
+    <label for="done">Done</label>
+    <input id="done" type="checkbox" name="done"/><br/>
+    <input type="submit" value="Submit"/>
+    <a th:href="@{/}">Cancel</a>
+</form>
+
+
+
 </body>
 </html>
