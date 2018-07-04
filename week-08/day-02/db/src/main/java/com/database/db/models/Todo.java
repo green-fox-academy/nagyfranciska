@@ -42,15 +42,15 @@ public class Todo {
     return IsUrgent;
   }
 
-  public void setUrgent() {
-    IsUrgent = true;
+  public void setUrgent(boolean urgent) {
+    IsUrgent = urgent;
   }
 
   public boolean isDone() {
     return IsDone;
   }
 
-  public void setDone() {
-    IsDone = true;
+  public void setDone(boolean done) {
+    IsDone = done;
   }
 }

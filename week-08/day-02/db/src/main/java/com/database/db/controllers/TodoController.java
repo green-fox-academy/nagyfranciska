@@ -34,13 +34,13 @@ public class TodoController {
     return "redirect:";
   }
 
-  @GetMapping("edit/{id}")
-  public String edit() {
+  @GetMapping("/edit/{id}")
+  public String renderEdit() {
     return "edit";
   }
 
-  @GetMapping("edit/{id}/editTodo")
-  public String editTodo() {
-    return "redirect:";
-  }
+//  @GetMapping("editTodo")
+//  public String editTodo() {
+//    return "redirect:";
+//  }
 }
