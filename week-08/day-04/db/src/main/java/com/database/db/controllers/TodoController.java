@@ -32,7 +32,7 @@ public class TodoController {
     return "redirect:/";
   }
 
-  @GetMapping("/delete")
+  @PostMapping("/delete")
   public String delete(@RequestParam("id") String id) {
     Long todoID = Long.parseLong(id);
     Todo todo = todoRepo.findTodoById(todoID);
@@ -48,7 +48,7 @@ public class TodoController {
     return "edit";
   }
 
-  @GetMapping("/editTodo")
+  @PostMapping("/editTodo")
   public String editTodo(@RequestParam("id") String id, @RequestParam("description") String description, @RequestParam(name = "urgent", required = false) Boolean urgent, @RequestParam(name = "done", required = false) Boolean done) {
     Long todoID = Long.parseLong(id);
     Todo todo = todoRepo.findTodoById(todoID);
@@ -65,5 +65,11 @@ public class TodoController {
     }
     todoRepo.save(todo);
     return "redirect:/";
+  }
+
+  @GetMapping("/active")
+  public String active(Model model) {
+    model.addAttribute("todos", todoRepo.findAll());
+    return "active";
   }
 }
