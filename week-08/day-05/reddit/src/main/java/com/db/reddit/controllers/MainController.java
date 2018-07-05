@@ -28,23 +28,24 @@ public class MainController {
     return "login";
   }
 
-  @PostMapping()
+  @PostMapping("/login")
   public String login(@RequestParam("username") String username, @RequestParam("email") String email) {
     if (!authorService.validator(email)) {
-      return "redirect:/error";
+      return "redirect:/logerror";
     }
     authorService.login(username, email);
-    return "redirect:/top";
+    return "redirect:/list";
   }
 
-  @GetMapping("error")
-  public String error() {
-    return "error";
+  @GetMapping("logerror")
+  public String logerror() {
+    return "logerror";
   }
 
-  @GetMapping("/top")
-  public String renderTopList() {
-    return "toplist";
+  @GetMapping("/list")
+  public String renderTopList(Model model) {
+    model.addAttribute("posts", postService.findAll());
+    return "list";
   }
 
   @GetMapping("/submit")
@@ -52,8 +53,17 @@ public class MainController {
     return "submit";
   }
 
-  @GetMapping("/list")
-  public String renderList() {
-    return "list";
+  @PostMapping("/newPost")
+  public String newPost(@RequestParam("title") String title, @RequestParam("content") String content) {
+    if (!postService.validator(content)) {
+      return "redirect:/suberror";
+    }
+    postService.save(title, content);
+    return "redirect:/list";
+  }
+
+  @GetMapping()
+  public String suberror() {
+  return "suberror";
   }
 }

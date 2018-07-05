@@ -1,7 +1,7 @@
 package com.db.reddit.models;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +12,8 @@ public class Post {
   private long id;
   private String title;
   private String content;
-  private int score;
-  private LocalDate createdAt;
+  private int score = 0;
+  private LocalDateTime createdAt;
   //private List<Author> authors = new ArrayList<>();
 
   public Post() {
@@ -22,7 +22,7 @@ public class Post {
   public Post(String title, String content) {
     this.title = title;
     this.content = content;
-    this.createdAt = LocalDate.now();
+    this.createdAt = LocalDateTime.now();
   }
 
   public long getId() {
@@ -65,11 +65,11 @@ public class Post {
 //    this.authors = authors;
 //  }
 
-  public LocalDate getCreatedAt() {
+  public LocalDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(LocalDate createdAt) {
+  public void setCreatedAt(LocalDateTime createdAt) {
     this.createdAt = createdAt;
   }
 }

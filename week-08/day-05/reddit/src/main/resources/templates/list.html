@@ -2,11 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>List of Posts</title>
+    <title>Trending Posts</title>
 </head>
 <body>
 
-<h1><h1>List of All Posts</h1></h1>
+<h3>Reddit</h3>
+
+<a href="submit">Submit new post</a>
+
+<h1 align="center">Trending Posts</h1>
+
+<table align="center">
+    <tr th:each="post: ${posts}">
+        <td th:text="${post.getScore()}"></td>
+        <td action="/thumbUp" method="post">
+            <input type="hidden" name="1" />
+            <input type="submit" value="+"/>
+        </td>
+        <td action="/thumbDown" method="post">
+            <input type="hidden" name="-1" />
+            <input type="submit" value="-"/>
+        </td>
+        <td><a th:href="${post.getContent()}" th:text="${post.getTitle()}"></a></td>
+        <td th:text="${post.getCreatedAt()}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
