@@ -3,12 +3,10 @@ package com.database.db.controllers;
 import com.database.db.models.Todo;
 import com.database.db.repositories.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TodoController {
@@ -32,26 +30,41 @@ public class TodoController {
   public String addTodo(@RequestParam("todo") String description) {
     Todo todo = new Todo(description);
     todoRepo.save(todo);
-    return "redirect:";
+    return "redirect:/";
   }
 
-  @GetMapping("/{id}")
-  public String renderEdit(@PathVariable("id") String id, Model model) {
-    model.addAttribute("id", id);
+  @GetMapping("/delete")
+  public String delete(@RequestParam("id") String id) {
+    Long todoID = Long.parseLong(id);
+    Todo todo = todoRepo.findTodoById(todoID);
+    todoRepo.delete(todo);
+    return "redirect:/";
+  }
+
+  @GetMapping("/edit")
+  public String renderEdit(@RequestParam("id") String id, Model model) {
+    Long todoID = Long.parseLong(id);
+    Todo todo = todoRepo.findTodoById(todoID);
+    model.addAttribute("todo", todo);
     return "edit";
   }
 
   @GetMapping("/editTodo")
-  public String editTodo(@RequestParam(value = "id") String id, @RequestParam("description") String description, @RequestParam("urgent") Boolean urgent, @RequestParam("done") Boolean done) {
+  public String editTodo(@RequestParam("id") String id, @RequestParam("description") String description, @RequestParam(name = "urgent", required = false) Boolean urgent, @RequestParam(name = "done", required = false) Boolean done) {
     Long todoID = Long.parseLong(id);
     Todo todo = todoRepo.findTodoById(todoID);
-    if (description.isEmpty()) {
+    todo.setTitle(description);
+    if (urgent == null) {
+      todo.setUrgent(false);
     } else {
-      todo.setTitle(description);
+    todo.setUrgent(true);
     }
-    todo.setUrgent(urgent);
-    todo.setDone(done);
+    if (done == null) {
+      todo.setDone(false);
+    } else {
+      todo.setDone(true);
+    }
     todoRepo.save(todo);
-    return "redirect:";
+    return "redirect:/";
   }
 }

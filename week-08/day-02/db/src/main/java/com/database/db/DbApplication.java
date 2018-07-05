@@ -1,5 +1,6 @@
 package com.database.db;
 
+import com.database.db.models.Todo;
 import com.database.db.repositories.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +23,6 @@ public class DbApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+			
 	}
 }
