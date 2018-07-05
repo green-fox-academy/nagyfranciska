@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Component
 public interface AuthorRepo extends CrudRepository<Author, Long> {
+
+  Author findAuthorByEmail(String email);
 }
