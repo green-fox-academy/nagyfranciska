@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TodoController {
@@ -16,7 +17,7 @@ public class TodoController {
   TodoRepo todoRepo;
 
 
-  @GetMapping("")
+  @GetMapping(value = {"", "/"})
   public String list(Model model) {
     model.addAttribute("todos", todoRepo.findAll());
     return "todolist";
@@ -34,13 +35,13 @@ public class TodoController {
     return "redirect:";
   }
 
-  @GetMapping("/edit/{id}")
+  @GetMapping("/{id}")
   public String renderEdit(@PathVariable("id") String id, Model model) {
     model.addAttribute("id", id);
     return "edit";
   }
 
-  @GetMapping("editTodo")
+  @GetMapping("/editTodo")
   public String editTodo(@RequestParam(value = "id") String id, @RequestParam("description") String description, @RequestParam("urgent") Boolean urgent, @RequestParam("done") Boolean done) {
     Long todoID = Long.parseLong(id);
     Todo todo = todoRepo.findTodoById(todoID);
