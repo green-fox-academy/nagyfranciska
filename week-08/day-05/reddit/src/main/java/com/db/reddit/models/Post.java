@@ -12,7 +12,7 @@ public class Post {
   private String title;
   private String content;
   private int score = 0;
-  private String createAt;
+  private String dateOfCreation;
 
   public Post() {
   }
@@ -60,14 +60,11 @@ public class Post {
   }
 
   public void setTimeStamp() {
-    createAt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+    dateOfCreation = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
   }
 
-  public String getCreateAt() {
-    return createAt;
+  public String getDateOfCreation() {
+    return dateOfCreation;
   }
 
-  public void setCreateAt(String createAt) {
-    this.createAt = createAt;
-  }
 }
