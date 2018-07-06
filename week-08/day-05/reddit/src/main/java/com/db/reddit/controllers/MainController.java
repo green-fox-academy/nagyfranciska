@@ -71,7 +71,7 @@ public class MainController {
     Post post = postService.findOneById(id);
     post.incrementScore(1);
     postService.save(post);
-    return "redirect: list";
+    return "redirect:/list";
   }
 
   @PostMapping("thumbDown/{id}")
@@ -79,6 +79,6 @@ public class MainController {
     Post post = postService.findOneById(id);
     post.incrementScore(-1);
     postService.save(post);
-    return "redirect: list";
+    return "redirect:/list";
   }
 }

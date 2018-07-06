@@ -1,8 +1,6 @@
 package com.db.reddit.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Author {
@@ -12,7 +10,6 @@ public class Author {
   private long id;
   private String username;
   private String email;
-  //private List<Post> posts = new ArrayList<>();
 
   public Author() {
   }
@@ -46,12 +43,5 @@ public class Author {
     this.email = email;
   }
 
-//  public List<Post> getPosts() {
-//    return posts;
-//  }
-//
-//  public void setPosts(List<Post> posts) {
-//    this.posts = posts;
-//  }
 }
 
