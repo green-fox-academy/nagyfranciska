@@ -25,6 +25,11 @@ public class PostServiceImp implements PostService{
   }
 
   @Override
+  public Post findOneById(Long id) {
+    return postRepo.findOneById(id);
+  }
+
+  @Override
   public void save(String title, String content) {
     postRepo.save(new Post(title, content));
   }
@@ -34,5 +39,10 @@ public class PostServiceImp implements PostService{
     Pattern pattern = Pattern.compile("^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
     Matcher matcher = pattern.matcher(url);
     return ((!url.isEmpty()) && (url!=null) && (matcher.matches()));
+  }
+
+  @Override
+  public void save(Post post) {
+    postRepo.save(post);
   }
 }

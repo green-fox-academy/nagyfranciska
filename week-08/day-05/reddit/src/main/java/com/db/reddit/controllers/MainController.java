@@ -1,5 +1,6 @@
 package com.db.reddit.controllers;
 
+import com.db.reddit.models.Post;
 import com.db.reddit.services.AuthorService;
 import com.db.reddit.services.AuthorServiceImp;
 import com.db.reddit.services.PostService;
@@ -7,9 +8,7 @@ import com.db.reddit.services.PostServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -65,5 +64,21 @@ public class MainController {
   @GetMapping()
   public String suberror() {
   return "suberror";
+  }
+
+  @PostMapping("thumbUp/{id}")
+  public String thumbUp(@PathVariable("id") Long id) {
+    Post post = postService.findOneById(id);
+    post.incrementScore(1);
+    postService.save(post);
+    return "redirect: list";
+  }
+
+  @PostMapping("thumbDown/{id}")
+  public String thumbDown(@PathVariable("id") Long id) {
+    Post post = postService.findOneById(id);
+    post.incrementScore(-1);
+    postService.save(post);
+    return "redirect: list";
   }
 }

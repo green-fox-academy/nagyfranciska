@@ -12,5 +12,6 @@ import java.util.List;
 public interface PostRepo extends CrudRepository<Post, Long> {
 
   List<Post> findAll();
+  Post findOneById(Long id);
 
 }
