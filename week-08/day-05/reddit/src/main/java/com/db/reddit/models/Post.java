@@ -11,15 +11,17 @@ public class Post {
   private long id;
   private String title;
   private String content;
-  private int score = 0;
+  private int score;
   private String dateOfCreation;
 
   public Post() {
+    score = 0;
   }
 
   public Post(String title, String content) {
     this.title = title;
     this.content = content;
+    score = 0;
     setTimeStamp();
   }
 
@@ -55,8 +57,12 @@ public class Post {
     this.score = score;
   }
 
-  public void incrementScore(int number) {
-    score += number;
+  public void increaseScore() {
+    score += 1;
+  }
+
+  public void decreaseScore() {
+    score -= 1;
   }
 
   public void setTimeStamp() {
@@ -65,6 +71,10 @@ public class Post {
 
   public String getDateOfCreation() {
     return dateOfCreation;
+  }
+
+  public void setDateOfCreation(String dateOfCreation) {
+    this.dateOfCreation = dateOfCreation;
   }
 
 }

@@ -13,17 +13,19 @@
 <h1 align="center">Trending Posts</h1>
 
 <table align="center">
-    <tr th:each="post: ${posts}">
-        <td th:text="${post.getScore()}"></td>
-        <td action="#" th:action="'thumbUp/' + ${post.getId()}" method="post">
+    <tr th:each="post:${posts}" th:object="${post}">
+        <td th:text="*{score}"></td>
+        <td action="/thumbUp" method="get">
+            <input type="hidden" name="id" th:value="*{id}">
             <input type="submit" value="+"/>
         </td>
-        <td action="#" th:action="'thumbUp/' + ${post.getId()}" method="post">
+        <td action="/thumbDown" method="get">
+            <input type="hidden" name="id" th:value="*{id}">
             <input type="submit" value="-"/>
         </td>
-        <td><a th:href="${post.getContent()}" th:text="${post.getTitle()}"></a></td>
+        <td><a th:href="*{content}" th:text="*{title}"></a></td>
         <td th:text="'posted by USER'"></td>
-        <td th:text="${post.getDateOfCreation()}"></td>
+        <td th:text="*{dateOfCreation}"></td>
     </tr>
 </table>
 

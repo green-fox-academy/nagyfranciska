@@ -66,18 +66,18 @@ public class MainController {
   return "suberror";
   }
 
-  @PostMapping("thumbUp/{id}")
-  public String thumbUp(@PathVariable("id") Long id) {
+  @GetMapping("/thumbUp")
+  public String thumbUp(@RequestParam("name") Long id) {
     Post post = postService.findOneById(id);
-    post.incrementScore(1);
+    post.increaseScore();
     postService.save(post);
     return "redirect:/list";
   }
 
-  @PostMapping("thumbDown/{id}")
-  public String thumbDown(@PathVariable("id") Long id) {
+  @GetMapping("/thumbDown")
+  public String thumbDown(@RequestParam("id") Long id) {
     Post post = postService.findOneById(id);
-    post.incrementScore(-1);
+    post.decreaseScore();
     postService.save(post);
     return "redirect:/list";
   }

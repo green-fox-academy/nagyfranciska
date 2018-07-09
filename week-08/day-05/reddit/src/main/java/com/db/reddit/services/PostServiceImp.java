@@ -29,6 +29,7 @@ public class PostServiceImp implements PostService{
     return postRepo.findOneById(id);
   }
 
+
   @Override
   public void save(String title, String content) {
     postRepo.save(new Post(title, content));
