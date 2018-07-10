@@ -41,13 +41,13 @@ public class RestControl {
     return new Result(restService.operatorChecker(what, doUntil.getUntil()));
   }
 
-  @PostMapping("/arrays")
-  public Object ArrayHandler(@RequestBody(required = false) Arrays arrays ) {
-    if (arrays == null) {
-      return new Error("Please provide what to do with the numbers!");
-    } else if (arrays.getWhat().equals("sum")) {
-      return new Result(restService.operatorChecker("sum", arrays.))
-    }
-    return arrays;
-  }
+//  @PostMapping("/arrays")
+//  public Object ArrayHandler(@RequestBody(required = false) Arrays arrays ) {
+//    if (arrays == null) {
+//      return new Error("Please provide what to do with the numbers!");
+//    } else if (arrays.getWhat().equals("sum")) {
+//      return new Result(restService.operatorChecker("sum", arrays.);
+//    }
+//    return arrays;
+//  }
 }
