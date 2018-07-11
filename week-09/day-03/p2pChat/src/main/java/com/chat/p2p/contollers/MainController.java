@@ -17,23 +17,29 @@ public class MainController {
 
   @GetMapping("/")
   public String renderIndexPage(Model model) {
-    if (userService.findUser() != null) {
-    model.addAttribute("localUser", userService.findUser());
+    if (userService.findUser(1) != null) {
+    model.addAttribute("localUser", userService.findUser(1));
     return "index";
     }
     return "redirect:/register";
   }
 
+  @PostMapping("/update")
+  public String updateUserName(@ModelAttribute LocalUser localUser) {
+    userService.deleteAll();
+    userService.saveLocalUser(localUser);
+    return "redirect:/";
+  }
+
   @GetMapping("/register")
   public String renderRegPage(Model model) {
-    model.addAttribute("newUser", new LocalUser());
+    model.addAttribute("user", new LocalUser());
     return "register";
   }
 
   @PostMapping("/add")
   public String addLocalUser(@ModelAttribute LocalUser localUser) {
     if (localUser != null) {
-      userService.deleteAll();
       userService.saveLocalUser(localUser);
       return "redirect:/";
     }

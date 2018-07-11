@@ -17,8 +17,8 @@ public class LocalUserServiceImp implements LocalUserService {
   }
 
   @Override
-  public LocalUser findUser() {
-    return userRepo.findAllByIdExists();
+  public LocalUser findUser(long id) {
+    return userRepo.findById(id);
   }
 
   @Override

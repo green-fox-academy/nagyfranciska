@@ -8,10 +8,10 @@
 
 <h1>Enter</h1>
 
-<p th:if="${newUser.username} == null" th:text="'The username field is empty'" style="color: red"></p>
-<p th:unless="${newUser.username} == null"></p>
+<p th:if="${user.username} == null" th:text="'The username field is empty'" style="color: red"></p>
+<p th:unless="${user.username} == null"></p>
 
-<form action="/add" method="post" th:object="${newUser}">
+<form action="/add" method="post" th:object="${user}">
     <label for="username">Choose your name:</label>
     <input id="username" type="text" th:field="username" />
     <input type="submit" value="Enter" />
