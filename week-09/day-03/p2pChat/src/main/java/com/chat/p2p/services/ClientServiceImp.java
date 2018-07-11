@@ -31,7 +31,7 @@ public class ClientServiceImp implements ClientService {
 
   @Override
   public void update(Client client) {
-    String newId = client.getId();
-    clientRepo.findAll().get(0).setId(newId);
+    String newName = client.getId();
+    clientRepo.findAll().get(0).setId(newName);
   }
 }

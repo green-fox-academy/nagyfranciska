@@ -10,12 +10,10 @@ import javax.persistence.Id;
 @Entity
 public class Client {
 
-
-
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @JsonIgnore
-  private long realId;
+  private long hiddenId;
 
   private String id;
 
@@ -24,6 +22,14 @@ public class Client {
 
   public Client(String id) {
     this.id = id;
+  }
+
+  public long getHiddenId() {
+    return hiddenId;
+  }
+
+  public void setHiddenId(long hiddenId) {
+    this.hiddenId = hiddenId;
   }
 
   public String getId() {
