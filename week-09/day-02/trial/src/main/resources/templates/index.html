@@ -5,6 +5,8 @@
     <title>List of Attractions</title>
 </head>
 <body>
+
+
 <table>
     <tr>
         <th>Name</th>
@@ -16,7 +18,7 @@
         <th>Duration</th>
         <th>Recommended Age</th>
     </tr>
-    <tr th:each="attr : ${attractions}" th:object="${attr}">
+    <tr th:each="attraction : ${attractions}" th:object="${attraction}">
         <td th:text="*{attrName}"></td>
         <td th:text="*{city}"></td>
         <td th:text="*{price}"></td>
@@ -27,6 +29,26 @@
         <td th:text="*{recommendedAge}"></td>
     </tr>
 </table>
+
+<form action="/add" method="post" th:object="${newAttr}">
+    <label for="name">Name</label>
+    <input id="name" type="text" th:field="*{attrName}" required><br>
+    <label for="city">City</label>
+    <input id="city" type="text" th:field="*{city}" required><br>
+    <label for="price">Price</label>
+    <input id="price" type="text" th:field="*{price}" required><br>
+    <label for="long">Longitude</label>
+    <input id="long" type="text" th:field="*{longitude}" required><br>
+    <label for="lat">Latitude</label>
+    <input id="lat" type="text" th:field="*{latitude}" required><br>
+    <label for="category">Category</label>
+    <input id="category" type="text" th:field="*{category}" required><br>
+    <label for="duration">Duration</label>
+    <input id="duration" type="text" th:field="*{duration}" required><br>
+    <label for="age">Recommended age</label>
+    <input id="age" type="text" th:field="*{recommendedAge}" required><br>
+    <input type="submit" value="Add new attraction">
+</form>
 
 </body>
 </html>

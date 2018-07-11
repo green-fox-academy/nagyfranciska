@@ -9,4 +9,5 @@ import java.util.List;
 public interface AttrService {
 
   List<Attraction> getAll();
+  void save(Attraction attraction);
 }

@@ -20,4 +20,9 @@ public class AttrServiceImp implements AttrService{
     attrRepository.findAll().forEach(listOfAttractions::add);
     return listOfAttractions;
   }
+
+  @Override
+  public void save(Attraction attraction) {
+    attrRepository.save(attraction);
+  }
 }
