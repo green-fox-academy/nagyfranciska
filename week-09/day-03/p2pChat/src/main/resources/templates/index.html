@@ -8,5 +8,12 @@
 
 <h1>Peer to Peer Chat program</h1>
 
+<form th:object="${localUser}">
+    <label for="user">Your username:</label>
+    <input id="user" type="text" th:field="*{username}">
+    <input type="hidden" th:field="*{id}">
+    <input type="submit" value="update">
+</form>
+
 </body>
 </html>

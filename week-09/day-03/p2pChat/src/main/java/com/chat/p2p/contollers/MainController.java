@@ -16,8 +16,12 @@ public class MainController {
   LocalUserService userService;
 
   @GetMapping("/")
-  public String renderIndexPage() {
+  public String renderIndexPage(Model model) {
+    if (userService.findUser() != null) {
+    model.addAttribute("localUser", userService.findUser());
     return "index";
+    }
+    return "redirect:/register";
   }
 
   @GetMapping("/register")
@@ -28,8 +32,12 @@ public class MainController {
 
   @PostMapping("/add")
   public String addLocalUser(@ModelAttribute LocalUser localUser) {
-    userService.saveLocalUser(localUser);
-    return "redirect:/";
+    if (localUser != null) {
+      userService.deleteAll();
+      userService.saveLocalUser(localUser);
+      return "redirect:/";
+    }
+    return "register";
   }
 
 }

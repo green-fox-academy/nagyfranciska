@@ -15,4 +15,14 @@ public class LocalUserServiceImp implements LocalUserService {
   public void saveLocalUser(LocalUser localUser) {
     userRepo.save(localUser);
   }
+
+  @Override
+  public LocalUser findUser() {
+    return userRepo.findAllByIdExists();
+  }
+
+  @Override
+  public void deleteAll() {
+    userRepo.deleteAll();
+  }
 }

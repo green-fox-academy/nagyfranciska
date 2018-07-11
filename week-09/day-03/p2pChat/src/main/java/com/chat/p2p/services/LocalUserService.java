@@ -5,6 +5,7 @@ import com.chat.p2p.models.LocalUser;
 public interface LocalUserService {
 
   void saveLocalUser(LocalUser localUser);
-
+  LocalUser findUser();
+  void deleteAll();
 
 }

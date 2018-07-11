@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LocalUserRepo extends CrudRepository<LocalUser, Long> {
+
+  LocalUser findAllByIdExists();
 }
