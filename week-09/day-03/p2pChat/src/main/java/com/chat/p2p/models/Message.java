@@ -9,8 +9,6 @@ import java.util.Random;
 @Entity
 public class Message {
 
-  Random rand = new Random();
-
   @Id
   private long id;
   private String username;
@@ -21,9 +19,11 @@ public class Message {
   }
 
   public Message(String username, String text) {
+    Random rand = new Random();
     this.username = username;
     this.text = text;
     this.id = rand.nextInt(9999999) + 1000000;
+    this.timestamp = stamp();
   }
 
   public long getId() {
@@ -54,7 +54,10 @@ public class Message {
     return timestamp;
   }
 
-  public void setTimestamp() {
-    this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+  public void setTimestamp(String timestamp) {
+  }
+
+  public String stamp() {
+    return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
   }
 }

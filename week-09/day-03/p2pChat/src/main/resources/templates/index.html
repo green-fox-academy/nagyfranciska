@@ -15,17 +15,16 @@
     <input type="submit" value="update">
 </form>
 
-<ul>
-    <li th:object="${defaultMessage}" th:text="*{username}"></li>
-    <li style="list-style-type: none;" th:object="${defaultMessage}" th:text="*{text}"></li>
+<ul th:each="message : ${messages}" th:object="${message}">
+    <li th:text="*{username}"></li>
+    <li style="list-style-type: none;" th:text="*{text}"></li>
 </ul>
 
-<form>
-    <textarea cols="30" rows="3"></textarea>
+<form action="/sendMessage" method="post">
+    <input type="hidden" th:name="username" th:value="${client.id}">
+    <textarea cols="30" rows="3" th:name="text"></textarea>
     <input type="submit" value="Send" />
 </form>
-
-
 
 </body>
 </html>
