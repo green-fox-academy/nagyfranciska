@@ -14,7 +14,6 @@ public class Client {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @JsonIgnore
   private long hiddenId;
-
   private String id;
 
   public Client() {

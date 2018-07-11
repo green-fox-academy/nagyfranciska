@@ -33,7 +33,6 @@ public class GuardianController {
 
   @GetMapping("/rocket/fill")
   public ResponseEntity<?> fillCargo(@RequestParam(value = "caliber", required = false) String caliberType, @RequestParam(value = "amount", required = false) Integer amount) {
-
+  return null;
   }
-
 }
