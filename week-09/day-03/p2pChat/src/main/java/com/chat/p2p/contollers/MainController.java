@@ -1,7 +1,7 @@
 package com.chat.p2p.contollers;
 
-import com.chat.p2p.models.LocalUser;
-import com.chat.p2p.services.LocalUserService;
+import com.chat.p2p.models.Client;
+import com.chat.p2p.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,34 +13,33 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
   @Autowired
-  LocalUserService userService;
+  ClientService clientService;
 
   @GetMapping("/")
   public String renderIndexPage(Model model) {
-    if (userService.findUser(1) != null) {
-    model.addAttribute("localUser", userService.findUser(1));
+    if (clientService.clientExists()) {
+    model.addAttribute("client", clientService.getClient());
     return "index";
     }
     return "redirect:/register";
   }
 
   @PostMapping("/update")
-  public String updateUserName(@ModelAttribute LocalUser localUser) {
-    userService.deleteAll();
-    userService.saveLocalUser(localUser);
+  public String updateClient(@ModelAttribute Client client) {
+    clientService.update(client);
     return "redirect:/";
   }
 
   @GetMapping("/register")
   public String renderRegPage(Model model) {
-    model.addAttribute("user", new LocalUser());
+    model.addAttribute("client", new Client());
     return "register";
   }
 
   @PostMapping("/add")
-  public String addLocalUser(@ModelAttribute LocalUser localUser) {
-    if (localUser != null) {
-      userService.saveLocalUser(localUser);
+  public String addClient(@ModelAttribute Client client) {
+    if (client != null) {
+      clientService.saveClient(client);
       return "redirect:/";
     }
     return "register";
