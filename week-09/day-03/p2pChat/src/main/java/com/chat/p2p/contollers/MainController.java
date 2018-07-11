@@ -1,6 +1,7 @@
 package com.chat.p2p.contollers;
 
 import com.chat.p2p.models.Client;
+import com.chat.p2p.models.Message;
 import com.chat.p2p.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ public class MainController {
   public String renderIndexPage(Model model) {
     if (clientService.clientExists()) {
     model.addAttribute("client", clientService.getClient());
+    model.addAttribute("defaultMessage", new Message("App", "Hi there! Submit your message using the send button!"));
     return "index";
     }
     return "redirect:/register";

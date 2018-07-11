@@ -8,9 +8,6 @@
 
 <h1>Enter</h1>
 
-<!--< th:if="${client.id} == null" th:text="'The username field is empty'" style="color: red"></p>-->
-<!--<div th:unless="${client.id} == null"></div>-->
-
 <form action="/add" method="post" th:object="${client}">
     <label for="name">Choose your name:</label>
     <input id="name" type="text" th:field="*{id}" />

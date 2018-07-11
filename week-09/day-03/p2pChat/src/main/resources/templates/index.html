@@ -15,5 +15,17 @@
     <input type="submit" value="update">
 </form>
 
+<ul>
+    <li th:object="${defaultMessage}" th:text="*{username}"></li>
+    <li style="list-style-type: none;" th:object="${defaultMessage}" th:text="*{text}"></li>
+</ul>
+
+<form>
+    <textarea cols="30" rows="3"></textarea>
+    <input type="submit" value="Send" />
+</form>
+
+
+
 </body>
 </html>
