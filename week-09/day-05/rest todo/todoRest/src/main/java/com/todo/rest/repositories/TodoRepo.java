@@ -10,5 +10,6 @@ public interface TodoRepo extends CrudRepository<Todo, Long> {
   Todo findById(long id);
   List<Todo> findAllByUrgentIsTrue();
   List<Todo> findAllByDescriptionContaining(String filterWord);
+  List<Todo> findAllByDoneIsFalse();
 
 }

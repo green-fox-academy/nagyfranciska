@@ -48,4 +48,14 @@ public class TodoServiceImp implements TodoService {
   public List<Todo> filteredList(String filter) {
     return todoRepo.findAllByDescriptionContaining(filter);
   }
+
+  @Override
+  public List<Todo> urgentList() {
+    return todoRepo.findAllByUrgentIsTrue();
+  }
+
+  @Override
+  public List<Todo> undoneList() {
+    return todoRepo.findAllByDoneIsFalse();
+  }
 }

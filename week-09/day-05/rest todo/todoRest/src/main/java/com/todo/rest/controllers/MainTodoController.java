@@ -14,14 +14,19 @@ public class MainTodoController {
   TodoService todoService;
 
   @GetMapping("")
-  public String renderIndex(Model model, @RequestParam(value = "search", required = false) String search) {
+  public String renderIndex(Model model, @RequestParam(value = "search", required = false) String search,
+                            @RequestParam(value = "urgent", required = false) String urgent,
+                            @RequestParam(value = "undone", required = false) String undone) {
     if (search != null) {
       model.addAttribute("todoList", todoService.filteredList(search));
-      model.addAttribute("newTodo", new Todo());
+    } else if (urgent != null) {
+      model.addAttribute("todoList", todoService.urgentList());
+    } else if (undone != null) {
+      model.addAttribute("todoList", todoService.undoneList());
     } else {
       model.addAttribute("todoList", todoService.findAll());
-      model.addAttribute("newTodo", new Todo());
     }
+    model.addAttribute("newTodo", new Todo());
     return "index";
   }
 

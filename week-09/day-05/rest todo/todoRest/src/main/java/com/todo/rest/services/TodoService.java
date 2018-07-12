@@ -12,4 +12,6 @@ public interface TodoService {
   void delete(long id);
   List<Todo> findAllUrgent();
   List<Todo> filteredList(String filter);
+  List<Todo> urgentList();
+  List<Todo> undoneList();
 }
