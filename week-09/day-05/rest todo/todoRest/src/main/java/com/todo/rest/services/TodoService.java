@@ -11,4 +11,5 @@ public interface TodoService {
   void save(Todo todo);
   void delete(long id);
   List<Todo> findAllUrgent();
+  List<Todo> filteredList(String filter);
 }

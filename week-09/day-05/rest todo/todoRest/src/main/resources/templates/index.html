@@ -19,7 +19,6 @@
             <th>Description</th>
             <th>Urgent</th>
             <th>Done</th>
-
         </tr>
         <tr th:each="todo : ${todoList}" th:object="${todo}">
             <td th:text="*{id}"></td>
@@ -37,8 +36,17 @@
                 </form>
             </td>
         </tr>
-
     </table>
+
+<form action="/" method="get" th:object="${todoList}">
+    <label for="filter">Search for todo:</label><br>
+    <input id="filter" type="text" name="search">
+    <input type="submit" value="Search">
+</form>
+
+<form action="/" method="get">
+    <input type="submit" value="Show all todos">
+</form>
 
 </body>
 </html>

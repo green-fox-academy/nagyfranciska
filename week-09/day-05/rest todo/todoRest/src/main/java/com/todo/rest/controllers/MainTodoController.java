@@ -5,10 +5,7 @@ import com.todo.rest.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainTodoController {
@@ -17,9 +14,14 @@ public class MainTodoController {
   TodoService todoService;
 
   @GetMapping("")
-  public String renderIndex(Model model) {
-    model.addAttribute("todoList", todoService.findAll());
-    model.addAttribute("newTodo", new Todo());
+  public String renderIndex(Model model, @RequestParam(value = "search", required = false) String search) {
+    if (search != null) {
+      model.addAttribute("todoList", todoService.filteredList(search));
+      model.addAttribute("newTodo", new Todo());
+    } else {
+      model.addAttribute("todoList", todoService.findAll());
+      model.addAttribute("newTodo", new Todo());
+    }
     return "index";
   }
 
