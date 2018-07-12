@@ -1,10 +1,12 @@
 package com.chat.p2p;
 
 import com.chat.p2p.contollers.ChatRestController;
+import com.chat.p2p.services.MessageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,8 +31,12 @@ public class ChatRestControllerTest {
   @Test
   public void receiveMessage_gotParams() throws Exception {
     mockMvc.perform(post("/api/message/receive")
-      .param("distance", String.valueOf(100.0))
-      .contentType(MediaType.APPLICATION_JSON))
+      .contentType(MediaType.APPLICATION_JSON)
+      .content("{" +
+        "  \"client\": {" +
+        "    \"id\": \"EggDice\"" +
+        "  }" +
+        "}"))
 
       .andExpect(status().isOk())
       .andExpect(content().contentType(contentType))

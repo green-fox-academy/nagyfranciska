@@ -31,7 +31,6 @@ public class MessageServiceImp implements MessageService {
     return (pack.getMessage().getId() != 0 &&
       pack.getMessage().getUsername() != null &
       pack.getMessage().getText() != null &&
-      pack.getMessage().getTimestamp() != null &&
       pack.getClient().getId() != null);
   }
 }

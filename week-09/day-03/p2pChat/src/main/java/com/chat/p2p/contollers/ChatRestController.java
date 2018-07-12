@@ -18,6 +18,8 @@ public class ChatRestController {
   @Autowired
   MessageService messageService;
 
+
+
   @PostMapping("/api/message/receive")
   @CrossOrigin("*")
   public ResponseEntity<?> receiveMessage(@RequestBody DTO dto) {
